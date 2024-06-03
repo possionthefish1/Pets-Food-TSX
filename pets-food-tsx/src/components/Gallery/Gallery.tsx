@@ -13,7 +13,7 @@ function BigGallery() {
   return (
     <div className='container mx-auto hidden w-[800px] grid-cols-2 grid-rows-2 gap-4 md:grid'>
       <div className=''>
-        <div className='flex flex-col overflow-hidden object-cover transition-all'>
+        <div className='flex flex-col overflow-hidden transition-all'>
           <div className='grow overflow-hidden'>
             <img
               className='transition-all hover:scale-105'
@@ -29,7 +29,7 @@ function BigGallery() {
         </div>
       </div>
       <div className=''>
-        <div className='flex flex-col overflow-hidden object-cover transition-all'>
+        <div className='flex flex-col overflow-hidden transition-all'>
           <div className='grow overflow-hidden'>
             <img
               className='transition-all hover:scale-105'
@@ -45,7 +45,7 @@ function BigGallery() {
         </div>
       </div>
       <div className=''>
-        <div className='flex flex-col overflow-hidden object-cover transition-all'>
+        <div className='flex flex-col overflow-hidden transition-all'>
           <div className='grow overflow-hidden'>
             <img
               className='transition-all hover:scale-105'
@@ -60,7 +60,7 @@ function BigGallery() {
         </div>
       </div>
       <div className=''>
-        <div className='flex flex-col overflow-hidden object-cover transition-all'>
+        <div className='flex flex-col overflow-hidden transition-all'>
           <div className='grow overflow-hidden'>
             <img
               className='transition-all hover:scale-105'

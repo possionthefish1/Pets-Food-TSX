@@ -40,7 +40,7 @@ function BigAbout() {
     <div className='mx-auto hidden w-[75%] grid-cols-2 gap-24 md:grid lg:h-[600px] md:gap-16 md:p-4'>
       <div className='overflow-hidden rounded-lg'>
         <img
-          className='w-[350px] overflow-hidden rounded-lg transition-all md:w-full hover:scale-[115%] lg:hover:scale-[120%] lg:scale-[115%]'
+          className='w-[350px] overflow-hidden rounded-lg object-[0_-150px] transition-all duration-300 ease-in-out md:w-full hover:scale-[115%] lg:hover:scale-[120%] lg:scale-[115%]'
           src='https://images.unsplash.com/photo-1561948955-570b270e7c36?q=80&w=2701&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
           alt='Cat Face'
         />
@@ -82,9 +82,29 @@ function BigAbout() {
   );
 }
 
+function TestSmallAbout() {
+  return (
+    <div className='justify-center overflow-hidden rounded'>
+      <div className='mx-auto h-[200px] max-w-[600px] overflow-hidden rounded-lg border-2 border-red-400 border-solid sm:h-[400px]'>
+        <img
+          className='h-full w-full object-cover object-[0_40%] transition-all hover:scale-[115%]'
+          src='/cat/white-cat.avif'
+          alt='White fur cat doing funny face, its mouth open ajar and its yellow eyes with black iris inside open wide as if it has been caught by surprise.'
+        />
+      </div>
+      <div className='grid content-center'>
+        <h3 className='font-bold text-2xl uppercase underline decoration-2 decoration-pink-500 decoration-wavy'>
+          about us
+        </h3>
+      </div>
+    </div>
+  );
+}
+
 function About() {
   return (
     <section className='container mx-auto overflow-hidden rounded-none bg-slate-100'>
+      {/* <TestSmallAbout /> */}
       <SmallAbout />
       <BigAbout />
     </section>
