@@ -1,5 +1,5 @@
 import fluid, { extract, fontSize } from 'fluid-tailwind';
-import reset from 'tw-reset';
+import reset,{screen} from 'tw-reset';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -23,5 +23,18 @@ export default {
       lemon: ['Lemon', 'serif'],
     },
     extend: {},
+    screen: {
+      'mini': '370px',
+      // => @media (min-width: 370px) { ... }
+
+      'tablet': '640px',
+      // => @media (min-width: 640px) { ... }
+
+      'laptop': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      'desktop': '1280px',
+      // => @media (min-width: 1280px) { ... }
+    },
   },
 };
