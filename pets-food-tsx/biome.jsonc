@@ -167,6 +167,6 @@
 			"jsxQuoteStyle": "single", // default "double"
 			"trailingCommas": "all", //default "all", choose "es5" to add comma only where older browser support.
 			"bracketSameLine": false // default false
-		}
+		}+
 	}
 }
