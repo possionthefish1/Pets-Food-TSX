@@ -1,5 +1,28 @@
-const products = [{src:'/dog/dog_food_3.jpeg', title:'Dog Food' , content:`From natural ingredients, appeal to a wide range
-of dog breeds and needs.` , },{src:'/cat/cat_snack_1.jpeg', title:'Cat Snack',}]
+//@bm-b array of products
+const products = [
+  {
+    src: '/dog/dog_food_3.jpeg',
+    title: 'Dog Food',
+    content:
+      'From natural ingredients, appeal to a wide range of dog breeds and needs.',
+  },
+  {
+    src: '/cat/cat_snack_1.jpeg',
+    title: 'Cat Snack',
+    content:
+      'From natural ingredients, appeal to a wide range of cat breeds and needs.',
+  },
+  {
+    src: '/cat/cat_toy_1.jpeg',
+    title: 'Cat Toy',
+    content: "Toys that are suitable for cat's playtime.",
+  },
+  {
+    src: '/dog/dog_toy_1.jpeg',
+    title: 'Dog Toy',
+    content: "Toys that are suitable for dog's playtime.",
+  },
+];
 
 function Intro() {
   return (
@@ -14,12 +37,13 @@ function Intro() {
 
 function BigGallery() {
   return (
-    <div className='container mx-auto hidden w-[960px] grid-cols-2 grid-rows-2 gap-4 md:grid '>
+    <div className='container mx-auto hidden grid-cols-2 grid-rows-2 gap-4 md:grid '>
+      {/* @bm-g todo: replace these with .map(*/}
       <div className=''>
         <div className='flex flex-col overflow-hidden transition-all'>
           <div className='grow overflow-hidden rounded-lg'>
             <img
-              className='transition-all hover:scale-105 rounded-lg'
+              className='rounded-lg transition-all duration-300 ease-in-out hover:scale-105'
               src='/dog/dog_food_3.jpeg'
               alt='Dog Food'
             />
@@ -83,7 +107,7 @@ function BigGallery() {
 
 function Gallery() {
   return (
-    <section className='container mx-auto my-8 md:my-24'>
+    <section className='container mx-auto my-8 max-w-[900px] md:my-24'>
       <Intro />
       <div className='grid auto-rows-auto grid-cols-2 gap-4 md:hidden'>
         <div className='col-span-full grid grid-cols-subgrid overflow-hidden'>
