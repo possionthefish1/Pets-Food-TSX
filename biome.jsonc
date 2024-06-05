@@ -119,7 +119,7 @@
 				"noInvalidPositionAtImportRule": "error",
 				"noLabelWithoutControl": "error",
 				"noMisplacedAssertion": "error",
-				"noReactSpecificProps": "error",
+				// "noReactSpecificProps": "error",
 				"noRestrictedImports": "error",
 				"noUndeclaredDependencies": "error",
 				"noUnknownFunction": "error",

@@ -119,7 +119,7 @@
 				"noInvalidPositionAtImportRule": "error",
 				"noLabelWithoutControl": "error",
 				"noMisplacedAssertion": "error",
-				"noReactSpecificProps": "error",
+				// "noReactSpecificProps": "error",
 				"noRestrictedImports": "error",
 				"noUndeclaredDependencies": "error",
 				"noUnknownFunction": "error",
@@ -167,6 +167,6 @@
 			"jsxQuoteStyle": "single", // default "double"
 			"trailingCommas": "all", //default "all", choose "es5" to add comma only where older browser support.
 			"bracketSameLine": false // default false
-		}+
+		}
 	}
 }
