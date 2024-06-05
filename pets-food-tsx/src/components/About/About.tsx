@@ -84,7 +84,7 @@ function BigAbout() {
 
 function About() {
   return (
-    <section className='container mx-auto overflow-hidden rounded-none bg-slate-100'>
+    <section className='container mx-auto my-8 overflow-hidden rounded-none bg-slate-100 md:my-24'>
       <SmallAbout />
       <BigAbout />
     </section>

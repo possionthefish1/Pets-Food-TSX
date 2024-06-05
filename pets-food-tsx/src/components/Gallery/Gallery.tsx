@@ -1,3 +1,6 @@
+const products = [{src:'/dog/dog_food_3.jpeg', title:'Dog Food' , content:`From natural ingredients, appeal to a wide range
+of dog breeds and needs.` , },{src:'/cat/cat_snack_1.jpeg', title:'Cat Snack',}]
+
 function Intro() {
   return (
     // h3 removed md:text-3xl temp.
@@ -11,12 +14,12 @@ function Intro() {
 
 function BigGallery() {
   return (
-    <div className='container mx-auto hidden w-[800px] grid-cols-2 grid-rows-2 gap-4 md:grid'>
+    <div className='container mx-auto hidden w-[960px] grid-cols-2 grid-rows-2 gap-4 md:grid '>
       <div className=''>
         <div className='flex flex-col overflow-hidden transition-all'>
-          <div className='grow overflow-hidden'>
+          <div className='grow overflow-hidden rounded-lg'>
             <img
-              className='transition-all hover:scale-105'
+              className='transition-all hover:scale-105 rounded-lg'
               src='/dog/dog_food_3.jpeg'
               alt='Dog Food'
             />

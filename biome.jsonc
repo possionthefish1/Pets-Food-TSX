@@ -50,7 +50,7 @@
 			},
 			"performance": {
 				"recommended": true,
-				"noBarrelFile": "error",
+				// "noBarrelFile": "error",
 				"noReExportAll": "error"
 			},
 			"security": {
@@ -142,7 +142,7 @@
 				"useGenericFontNames": "warn",
 				// "useImportExtensions": "warn",
 				"useNumberToFixedDigitsArgument": "error",
-				"useSemanticElements": "error",
+				// "useSemanticElements": "error",
 				"useSortedClasses": "warn",
 				"useThrowNewError": "error",
 				"useThrowOnlyError": "error"
