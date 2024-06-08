@@ -39,68 +39,24 @@ function BigGallery() {
   return (
     <div className='container mx-auto hidden grid-cols-2 grid-rows-2 gap-4 md:grid '>
       {/* @bm-g todo: replace these with .map(*/}
-      <div className=''>
-        <div className='flex flex-col overflow-hidden transition-all'>
-          <div className='grow overflow-hidden rounded-lg'>
-            <img
-              className='rounded-lg transition-all duration-300 ease-in-out hover:scale-105'
-              src='/dog/dog_food_3.jpeg'
-              alt='Dog Food'
-            />
+      {products.map((product) => (
+        <div
+          className=''
+          key={product.title}
+        >
+          <div className='flex flex-col overflow-hidden transition-all'>
+            <div className='grow overflow-hidden rounded-lg'>
+              <img
+                className='rounded-lg transition-all duration-300 ease-in-out hover:scale-105'
+                src={product.src}
+                alt={product.title}
+              />
+            </div>
+            <p className='font-bold'>{product.title}</p>
+            <p className=''>{product.content}</p>
           </div>
-          <p className='font-bold'>Dog Food</p>
-          <p className=''>
-            From natural ingredients, appeal to <br /> a wide range
-            of dog breeds and needs.
-          </p>
         </div>
-      </div>
-      <div className=''>
-        <div className='flex flex-col overflow-hidden transition-all'>
-          <div className='grow overflow-hidden'>
-            <img
-              className='transition-all hover:scale-105'
-              src='/cat/cat_snack_1.jpeg'
-              alt='Cat Snack'
-            />
-          </div>
-          <p className='font-bold'>Cat Snack</p>
-          <p className=''>
-            From natural ingredients, appeal to <br /> a wide range
-            of cat breeds and needs.
-          </p>
-        </div>
-      </div>
-      <div className=''>
-        <div className='flex flex-col overflow-hidden transition-all'>
-          <div className='grow overflow-hidden'>
-            <img
-              className='transition-all hover:scale-105'
-              src='/cat/cat_toy_1.jpeg'
-              alt='Cat Toy'
-            />
-          </div>
-          <p className='font-bold'>Cat Toy</p>
-          <p className=''>
-            Toys that are suitable for cats playtime.
-          </p>
-        </div>
-      </div>
-      <div className=''>
-        <div className='flex flex-col overflow-hidden transition-all'>
-          <div className='grow overflow-hidden'>
-            <img
-              className='transition-all hover:scale-105'
-              src='/dog/dog_toy_1.jpeg'
-              alt='Dog Toy'
-            />
-          </div>
-          <p className='font-bold'>Dog Toy</p>
-          <p className=''>
-            Toys that are suitable for dogs playtime.
-          </p>
-        </div>
-      </div>
+      ))}
     </div>
   );
 }
