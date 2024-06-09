@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { useDisclosure, Button, Drawer ,DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, Input, DrawerFooter} from '@chakra-ui/react';
 
 function Logo() {
   return (
@@ -20,84 +21,58 @@ function Logo() {
   );
 }
 
+function Destinations() {
+  return (
+    <>
+      <li>
+        <a
+          href='/'
+          className='underline underline-offset-4'
+        >
+          Home
+        </a>
+      </li>
+      <li>
+        <a
+          href='/'
+          className='underline-offset-4 hover:underline'
+        >
+          Products
+        </a>
+      </li>
+      <li>
+        <a
+          href='/'
+          className='underline-offset-4 hover:underline'
+        >
+          About Us
+        </a>
+      </li>
+      <li>
+        <a
+          href='/'
+          className='underline-offset-4 hover:underline'
+        >
+          Contact
+        </a>
+      </li>
+      <li>
+        <a
+          href='/'
+          className='underline-offset-4 hover:underline'
+        >
+          Sign In
+        </a>
+      </li>
+    </>
+  );
+}
+
 function Navbar() {
   const barRef = useRef<HTMLButtonElement>(null);
   const navRef = useRef<HTMLElement>(null);
   const xMarkRef = useRef<HTMLButtonElement>(null);
-
-  function Hamburger() {
-    return (
-      <ul className='ml-auto md:hidden'>
-        <li>
-          <button
-            type='button'
-            className='toggle-nav text-white'
-            ref={barRef}
-            onClick={() => {
-              if (navRef.current && barRef.current) {
-                navRef.current.classList.toggle('opacity-0');
-                navRef.current.classList.toggle(
-                  '-translate-x-full',
-                );
-                navRef.current.classList.toggle('translate-x-0');
-                barRef.current.classList.add('hidden');
-              }
-            }}
-          >
-            <i className='fa-sharp fa-solid fa-bars' />
-          </button>
-        </li>
-      </ul>
-    );
-  }
-
-  function Destinations() {
-    return (
-      <>
-        <li>
-          <a
-            href='/'
-            className='underline underline-offset-4'
-          >
-            Home
-          </a>
-        </li>
-        <li>
-          <a
-            href='/'
-            className='underline-offset-4 hover:underline'
-          >
-            Products
-          </a>
-        </li>
-        <li>
-          <a
-            href='/'
-            className='underline-offset-4 hover:underline'
-          >
-            About Us
-          </a>
-        </li>
-        <li>
-          <a
-            href='/'
-            className='underline-offset-4 hover:underline'
-          >
-            Contact
-          </a>
-        </li>
-        <li>
-          <a
-            href='/'
-            className='underline-offset-4 hover:underline'
-          >
-            Sign In
-          </a>
-        </li>
-      </>
-    );
-  }
-
+ 
   function MobileNav() {
     return (
       <nav
@@ -176,7 +151,7 @@ function Navbar() {
       {/* <!-- 2xl should become 1 row and span all --> */}
       <nav className='container relative z-10 mx-auto grid min-w-[300px] grid-cols-2 items-center px-8 py-4 md:grid-cols-[0.5fr_1fr] min-[2560px]:grid-cols-2 md:justify-between min-[2560px]:justify-items-center md:gap-4 md:px-4 min-[2560px]:px-96'>
         <Logo />
-        <Hamburger />
+        <DrawerExample/>
         <MobileNav />
         <MediumNav />
       </nav>
@@ -184,40 +159,43 @@ function Navbar() {
   );
 }
 
-import React from 'react';
-import { useDisclosure, Button, Drawer ,DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, Input, DrawerFooter} from '@chakra-ui/react';
-
-
 function DrawerExample() {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const btnRef = React.useRef()
+  const btnRef = useRef()
 
   return (
     <>
-      <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
-        Open
+      <Button ref={btnRef} color='white' bg='none' onClick={onOpen} hideFrom='md' ml="auto" >
+      <i className='fa-sharp fa-solid fa-bars' />
       </Button>
-      <Drawer
+      {/*   flex  w-full items-center justify-center bg-white/50 opacity-0 backdrop-blur transition-all duration-[600ms] md:hidden */}
+      <Drawer  size='full' hideFrom='md'  
         isOpen={isOpen}
         placement='right'
         onClose={onClose}
         finalFocusRef={btnRef}
       >
-        <DrawerOverlay />
-        <DrawerContent>
+        <DrawerOverlay  hideFrom='md'/>
+        <DrawerContent  
+      bg="whiteAlpha.800"
+      backdropFilter="auto"
+      backdropBlur="6px"
+      hideFrom='md'>
           <DrawerCloseButton />
-          <DrawerHeader>Create your account</DrawerHeader>
+          <DrawerHeader>Hello, Customer</DrawerHeader>
 
-          <DrawerBody>
-            <Input placeholder='Type here...' />
+          <DrawerBody >
+          <ul className='flex h-full flex-col items-center justify-center gap-6 text-2xl *:p-4'>
+            <Destinations />
+          </ul>
           </DrawerBody>
 
-          <DrawerFooter>
+          {/* <DrawerFooter>
             <Button variant='outline' mr={3} onClick={onClose}>
               Cancel
             </Button>
             <Button colorScheme='blue'>Save</Button>
-          </DrawerFooter>
+          </DrawerFooter> */}
         </DrawerContent>
       </Drawer>
     </>
