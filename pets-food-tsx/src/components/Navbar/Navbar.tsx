@@ -1,5 +1,16 @@
+import {
+  Button,
+  Drawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  Input,
+  useDisclosure,
+} from '@chakra-ui/react';
 import { useRef } from 'react';
-import { useDisclosure, Button, Drawer ,DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerHeader, DrawerBody, Input, DrawerFooter} from '@chakra-ui/react';
 
 function Logo() {
   return (
@@ -72,7 +83,7 @@ function Navbar() {
   const barRef = useRef<HTMLButtonElement>(null);
   const navRef = useRef<HTMLElement>(null);
   const xMarkRef = useRef<HTMLButtonElement>(null);
- 
+
   function MobileNav() {
     return (
       <nav
@@ -151,7 +162,7 @@ function Navbar() {
       {/* <!-- 2xl should become 1 row and span all --> */}
       <nav className='container relative z-10 mx-auto grid min-w-[300px] grid-cols-2 items-center px-8 py-4 md:grid-cols-[0.5fr_1fr] min-[2560px]:grid-cols-2 md:justify-between min-[2560px]:justify-items-center md:gap-4 md:px-4 min-[2560px]:px-96'>
         <Logo />
-        <DrawerExample/>
+        <DrawerExample />
         <MobileNav />
         <MediumNav />
       </nav>
@@ -160,34 +171,44 @@ function Navbar() {
 }
 
 function DrawerExample() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const btnRef = useRef()
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  // const btnRef = useRef()
+  const btnRef = useRef<HTMLButtonElement | null>(null);
 
   return (
     <>
-      <Button ref={btnRef} color='white' bg='none' onClick={onOpen} hideFrom='md' ml="auto" >
-      <i className='fa-sharp fa-solid fa-bars' />
+      <Button
+        ref={btnRef}
+        color='white'
+        bg='none'
+        onClick={onOpen}
+        hideFrom='md'
+        ml='auto'
+      >
+        <i className='fa-sharp fa-solid fa-bars' />
       </Button>
       {/*   flex  w-full items-center justify-center bg-white/50 opacity-0 backdrop-blur transition-all duration-[600ms] md:hidden */}
-      <Drawer  size='full' hideFrom='md'  
+      <Drawer
+        size='full'
         isOpen={isOpen}
         placement='right'
         onClose={onClose}
         finalFocusRef={btnRef}
       >
-        <DrawerOverlay  hideFrom='md'/>
-        <DrawerContent  
-      bg="whiteAlpha.800"
-      backdropFilter="auto"
-      backdropBlur="6px"
-      hideFrom='md'>
+        <DrawerOverlay hideFrom='md' />
+        <DrawerContent
+          bg='whiteAlpha.800'
+          backdropFilter='auto'
+          backdropBlur='6px'
+          hideFrom='md'
+        >
           <DrawerCloseButton />
           <DrawerHeader>Hello, Customer</DrawerHeader>
 
-          <DrawerBody >
-          <ul className='flex h-full flex-col items-center justify-center gap-6 text-2xl *:p-4'>
-            <Destinations />
-          </ul>
+          <DrawerBody>
+            <ul className='flex h-full flex-col items-center justify-center gap-6 text-2xl *:p-4'>
+              <Destinations />
+            </ul>
           </DrawerBody>
 
           {/* <DrawerFooter>
@@ -199,7 +220,7 @@ function DrawerExample() {
         </DrawerContent>
       </Drawer>
     </>
-  )
+  );
 }
 
 export { Navbar };
