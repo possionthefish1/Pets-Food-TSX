@@ -45,7 +45,7 @@ function BigAbout() {
           alt='Cat Face'
         />
       </div>
-      <div className='relative grid content-center md:max-lg:static'>
+      <div className='relative grid content-center py-8'>
         <h3 className='font-bold text-2xl uppercase underline decoration-2 decoration-pink-500 decoration-wavy'>
           about us
         </h3>
@@ -66,11 +66,11 @@ function BigAbout() {
         >
           Discover who we are
         </a>
-        <div className='absolute inset-[0_0_auto_auto] inline-block w-fit rounded-full bg-gray-500 p-4 transition-all duration-[300ms] md:max-lg:inset-[1rem_1rem_auto_auto] hover:scale-125'>
+        <div className='absolute inset-[0_0_auto_auto] inline-block w-fit rounded-full bg-gray-500 p-4 transition-all duration-[300ms] hover:scale-125'>
           <svg
             role='graphics-symbol'
             fill='white'
-            className='h-[30px] md:max-lg:h-[20px]'
+            className='h-[30px]'
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 512 512'
           >
