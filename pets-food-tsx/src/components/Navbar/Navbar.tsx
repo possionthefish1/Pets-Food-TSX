@@ -4,10 +4,8 @@ import {
   DrawerBody,
   DrawerCloseButton,
   DrawerContent,
-  DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
-  Input,
   useDisclosure,
 } from '@chakra-ui/react';
 import { useRef } from 'react';
