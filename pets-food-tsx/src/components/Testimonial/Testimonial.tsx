@@ -1,5 +1,6 @@
 // import React from 'react';
 // import styles from './Testimonial.module.css';
+import { Heading, Image, Text } from '@chakra-ui/react'
 import { Grid, GridItem } from '@chakra-ui/react';
 import {
   Avatar,
@@ -10,56 +11,38 @@ import {
 
 function Testimonial() {
   return (
-    <>
-      <Grid
-        templateAreas={`"header header"
-						"nav main"
-						"nav footer"`}
-        gridTemplateRows={'50px 1fr 30px'}
-        gridTemplateColumns={'150px 1fr'}
-        h='200px'
-        gap='1'
-        color='blackAlpha.700'
-        fontWeight='bold'
-      >
-        <GridItem
-          pl='2'
-          bg='orange.300'
-          area={'header'}
-        >
-          Header
-        </GridItem>
-        <GridItem
-          pl='2'
-          bg='pink.300'
-          area={'nav'}
-        >
-          Nav
-        </GridItem>
-        <GridItem
-          pl='2'
-          bg='green.300'
-          area={'main'}
-        >
-          Main
-        </GridItem>
-        <GridItem
-          pl='2'
-          bg='blue.300'
-          area={'footer'}
-        >
-          Footer
-        </GridItem>
-      </Grid>
-      <Wrap>
-        <WrapItem>
-          <Avatar
-            name='Dan Abrahmov'
-            src='https://bit.ly/dan-abramov'
-          />
-        </WrapItem>
-      </Wrap>
-    </>
+      <section className='container'>
+        <Grid templateRows='repeat(3, 0.5fr)' templateColumns='repeat(3, 1fr)' gap={4} hideFrom='md'>
+          <GridItem colSpan={3}>
+            <Heading textTransform='uppercase' fontSize='2xl'>story from owners</Heading>
+          </GridItem>
+          <GridItem colSpan={1}>
+          <Image
+  borderRadius='full'
+  boxSize='80px'
+  src='https://bit.ly/dan-abramov'
+  alt='Dan Abramov'
+/>
+          </GridItem>
+            <GridItem colSpan={2} colStart={2}>
+              <Heading as='h6' size='md'>doraemon, robot</Heading>
+              <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, nam.</Text>
+            </GridItem>
+            <GridItem colSpan={1}>
+          <Image
+  borderRadius='full'
+  boxSize='80px'
+  src='https://bit.ly/dan-abramov'
+  alt='Dan Abramov'
+/>
+          </GridItem>
+            <GridItem colSpan={2} colStart={2}>
+              <Heading as='h6' size='md'>nobita, student</Heading>
+              <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, nam.</Text>
+            </GridItem>
+        </Grid>
+
+      </section>
   );
 }
 
