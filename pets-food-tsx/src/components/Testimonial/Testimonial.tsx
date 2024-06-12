@@ -1,6 +1,6 @@
 // import React from 'react';
 // import styles from './Testimonial.module.css';
-import { Heading, Image, Text, Container, Grid, GridItem } from '@chakra-ui/react';
+import { Heading, Image, Text, Grid, GridItem } from '@chakra-ui/react';
 
 function Testimonial() {
   return (
