@@ -1,6 +1,12 @@
 // import React from 'react';
 // import styles from './Testimonial.module.css';
-import { Heading, Image, Text, Grid, GridItem } from '@chakra-ui/react';
+import {
+  Grid,
+  GridItem,
+  Heading,
+  Image,
+  Text,
+} from '@chakra-ui/react';
 
 function Testimonial() {
   return (
@@ -42,11 +48,15 @@ function Testimonial() {
             mb='1'
             textTransform='capitalize'
           >
-            aysha, <span className='text-slate-500 font-medium'>developer</span>
+            aysha,{' '}
+            <span className='font-medium text-slate-500'>
+              developer
+            </span>
           </Heading>
           <Text noOfLines={[2, 4]}>
             Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit. Praesentium, nam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, ut.
+            elit. Praesentium, nam. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Suscipit, ut.
           </Text>
         </GridItem>
         <GridItem colSpan={1}>
@@ -55,7 +65,7 @@ function Testimonial() {
             h='full'
             objectFit='cover'
             aspectRatio='1/1'
-            src="https://images.unsplash.com/photo-1641521218916-6b404f676ea8?q=80&w=2612&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src='https://images.unsplash.com/photo-1641521218916-6b404f676ea8?q=80&w=2612&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
             alt='Dan Abramov'
           />
         </GridItem>
@@ -69,11 +79,15 @@ function Testimonial() {
             mb='1'
             textTransform='capitalize'
           >
-            helen, <span className='text-slate-500 font-medium'>student</span>
+            helen,{' '}
+            <span className='font-medium text-slate-500'>
+              student
+            </span>
           </Heading>
           <Text noOfLines={[2, 4]}>
             Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit. Praesentium, nam. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam, magnam.
+            elit. Praesentium, nam. Lorem ipsum dolor sit, amet
+            consectetur adipisicing elit. Aperiam, magnam.
           </Text>
         </GridItem>
       </Grid>

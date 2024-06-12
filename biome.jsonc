@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.8.0/schema.json",
+	"$schema": "https://biomejs.dev/schemas/1.8.1/schema.json",
 	"organizeImports": {
 		"enabled": true
 	},
@@ -77,7 +77,7 @@
 				"useBlockStatements": "warn",
 				"useCollapsedElseIf": "error",
 				"useConsistentArrayType": "error",
-				"useFilenamingConvention": {
+				/* "useFilenamingConvention": {
 					"level": "warn",
 					"options": {
 						"strictCase": true,
@@ -87,10 +87,10 @@
 							"export"
 						]
 					}
-				},
+				}, */
 				"useForOf": "warn",
 				"useFragmentSyntax": "warn",
-				"useNamingConvention": "error",
+				// "useNamingConvention": "error",
 				"useNodeAssertStrict": "error",
 				"useShorthandArrayType": "warn",
 				"useShorthandAssign": "warn",
@@ -99,14 +99,14 @@
 			"suspicious": {
 				"recommended": true,
 				// "all": true,
-				"noConsoleLog": "info",
+				// "noConsoleLog": "info",
 				"noEmptyBlockStatements": "error",
 				"noSkippedTests": "error",
 				"useAwait": "error"
 			},
 			"nursery": {
 				// "all": true,
-				"noConsole": "info",
+				// "noConsole": "info",
 				"noDoneCallback": "error",
 				"noDuplicateAtImportRules": "error",
 				"noDuplicateElseIf": "error",
