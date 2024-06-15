@@ -55,10 +55,12 @@ function SmallTestimonial() {
               developer
             </span>
           </Heading>
-          <Text noOfLines={[2, 4]}>
+          <Text noOfLines={[2, 3, 4]}>
             Lorem ipsum dolor sit amet, consectetur adipisicing
             elit. Praesentium, nam. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Suscipit, ut.
+            consectetur adipisicing elit. Suscipit, ut. Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Praesentium, nam. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Suscipit, ut. 
           </Text>
         </GridItem>
         <GridItem colSpan={1}>
@@ -89,8 +91,10 @@ function SmallTestimonial() {
               student
             </span>
           </Heading>
-          <Text noOfLines={[2, 4]}>
+          <Text noOfLines={[2, 3, 4]}>
             Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Praesentium, nam. Lorem ipsum dolor sit, amet
+            consectetur adipisicing elit. Aperiam, magnam. Lorem ipsum dolor sit amet, consectetur adipisicing
             elit. Praesentium, nam. Lorem ipsum dolor sit, amet
             consectetur adipisicing elit. Aperiam, magnam.
           </Text>
@@ -113,7 +117,8 @@ function BigTestimonial() {
     </GridItem>
     <GridItem rowStart={2} rowEnd={5}>
       <Image  objectFit='cover'
-              aspectRatio='1/1'
+              boxSize='350px'
+              w='100%'
               borderRadius='lg'
               src='https://plus.unsplash.com/premium_photo-1707093169504-206eeb29e157?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               alt='Dan Abramov' />
