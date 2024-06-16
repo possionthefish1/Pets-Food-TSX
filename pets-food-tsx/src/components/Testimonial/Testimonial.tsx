@@ -9,6 +9,8 @@ import {
 } from '@chakra-ui/react';
 
 function Testimonial() {
+  const myArr = [10, 20, 30] as const;
+  console.log(myArr);
   return (
     <section className='container mx-auto'>
       <Grid
