@@ -188,6 +188,15 @@ function BigTestimonial() {
           Iste nostrum itaque impedit laboriosam inventore! Deleniti
           voluptatem ipsum delectus incidunt!
         </Text>
+        <Text
+          mt={6}
+          fontSize={'2xl'}
+          hideBelow={'2xl'}
+          className='font-bold'
+        >
+          "Give your dog the shine they deserve with this nutritious
+          food."
+        </Text>
       </GridItem>
 
       <GridItem>
@@ -231,6 +240,14 @@ function BigTestimonial() {
           Lorem ipsum dolor sit, amet consectetur adipisicing elit.
           Iste nostrum itaque impedit laboriosam inventore! Deleniti
           voluptatem ipsum delectus incidunt!
+        </Text>
+        <Text
+          mt={6}
+          fontSize={'2xl'}
+          hideBelow={'2xl'}
+          className='font-bold'
+        >
+          "I recommend this brand for all my owners friends."
         </Text>
       </GridItem>
     </Grid>
