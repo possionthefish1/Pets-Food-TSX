@@ -1,3 +1,5 @@
+import { Link } from '@tanstack/react-router';
+
 function SmallAbout() {
   return (
     // 1000vw use 450px
@@ -24,12 +26,12 @@ function SmallAbout() {
           Minus, possimus voluptates debitis eum doloribus totam ut
           numquam vero repellendus ipsam!
         </p>
-        <a
-          href='/'
+        <Link
+          to='/about'
           className='w-fit rounded-md bg-rose-400 px-10 py-4 text-center font-bold text-white text-xl uppercase transition-all duration-500 hover:border-rose-700 hover:bg-rose-700'
         >
           Discover who we are
-        </a>
+        </Link>
       </div>
     </div>
   );
@@ -60,12 +62,12 @@ function BigAbout() {
           Minus, possimus voluptates debitis eum doloribus totam ut
           numquam vero repellendus ipsam!
         </p>
-        <a
-          href='/'
+        <Link
+          to='/about'
           className='w-fit text-nowrap rounded-md bg-rose-400 px-10 py-4 text-center font-bold text-white text-xl uppercase transition-all duration-500 hover:border-rose-700 hover:bg-rose-700'
         >
           Discover who we are
-        </a>
+        </Link>
         <div className='absolute inset-[0_0_auto_auto] inline-block w-fit rounded-full bg-gray-500 p-4 transition-all duration-[300ms] hover:scale-125'>
           <svg
             role='graphics-symbol'
