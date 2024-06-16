@@ -9,6 +9,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import { useRef } from 'react';
+import { Link } from '@tanstack/react-router';
 
 function Logo() {
   return (
@@ -50,12 +51,12 @@ function Destinations() {
         </a>
       </li>
       <li>
-        <a
-          href='/'
+        <Link
+          to='/about'
           className='underline-offset-4 hover:underline'
         >
           About Us
-        </a>
+        </Link>
       </li>
       <li>
         <a
