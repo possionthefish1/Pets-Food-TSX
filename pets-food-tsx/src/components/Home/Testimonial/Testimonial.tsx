@@ -120,7 +120,7 @@ function BigTestimonial() {
           fontSize={'4xl'}
           className='text-balance'
         >
-          <span className='uppercase text-xl'>what are some</span>
+          <span className='text-xl uppercase'>what are some</span>
           <br />
           words about <br /> our products
         </Heading>
@@ -131,19 +131,23 @@ function BigTestimonial() {
       </GridItem>
       <GridItem
         rowStart={2}
-        rowEnd={5}
+        rowEnd={4}
       >
-        <Image
-          objectFit='cover'
-          boxSize='350px'
-          w='100%'
-          borderRadius='lg'
-          src='https://plus.unsplash.com/premium_photo-1707093169504-206eeb29e157?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-          alt='Dan Abramov'
-        />
+        <div className='overflow-hidden rounded-lg'>
+          <Image
+            className='transition-all duration-300 hover:scale-105'
+            objectFit='cover'
+            // boxSize={'350px'}
+            // w='100%'
+            aspectRatio={1 / 1}
+            borderRadius='lg'
+            src='cat/cat_snack_7.jpeg'
+            alt='Dan Abramov'
+          />
+        </div>
       </GridItem>
       <GridItem>
-        <div className='overflow-hidden'>
+        <div className='overflow-hidden rounded-lg'>
           <Image
             borderRadius='lg'
             aspectRatio={16 / 9}
@@ -187,7 +191,7 @@ function BigTestimonial() {
       </GridItem>
 
       <GridItem>
-        <div className='overflow-hidden'>
+        <div className='overflow-hidden rounded-lg'>
           <Image
             aspectRatio={16 / 9}
             borderRadius='lg'
@@ -235,9 +239,11 @@ function BigTestimonial() {
 
 function Testimonial() {
   return (
-    <section className='container mx-auto'>
-      <SmallTestimonial />
-      <BigTestimonial />
+    <section className='p-16'>
+      <div className='container mx-auto'>
+        <SmallTestimonial />
+        <BigTestimonial />
+      </div>
     </section>
   );
 }
