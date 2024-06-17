@@ -8,8 +8,8 @@ import {
   DrawerOverlay,
   useDisclosure,
 } from '@chakra-ui/react';
-import { useRef } from 'react';
 import { Link } from '@tanstack/react-router';
+import { useRef } from 'react';
 
 function Logo() {
   return (
@@ -43,12 +43,12 @@ function Destinations() {
         </a>
       </li>
       <li>
-        <a
-          href='/'
+        <Link
+          to='/product'
           className='underline-offset-4 hover:underline'
         >
           Products
-        </a>
+        </Link>
       </li>
       <li>
         <Link
@@ -59,12 +59,13 @@ function Destinations() {
         </Link>
       </li>
       <li>
-        <a
-          href='/'
+        <Link
+          to='/'
+          hash='contact'
           className='underline-offset-4 hover:underline'
         >
           Contact
-        </a>
+        </Link>
       </li>
       <li>
         <a

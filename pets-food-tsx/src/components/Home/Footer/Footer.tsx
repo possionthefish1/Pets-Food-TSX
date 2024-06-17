@@ -31,7 +31,10 @@ const lists = [
 
 function Footer() {
   return (
-    <footer className='bg-slate-200 py-8 md:py-24'>
+    <footer
+      id='contact'
+      className='bg-slate-200 py-8 md:py-24'
+    >
       <div className='container mx-auto'>
         <div className='mx-auto grid w-[75%] grid-flow-row gap-8 md:grid-cols-[0.75fr_0.45fr_0.75fr_0.45fr]'>
           <div>
