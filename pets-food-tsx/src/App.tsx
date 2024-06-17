@@ -1,11 +1,9 @@
-import { Footer } from './components/Footer';
-import { Gallery } from './components/Gallery';
-import { Hero } from
-'./c./components/Home/Gallery
-import { About } from
-./components/Home/Heroe/About';
-import { Navbar } from './components/Navbar';
+import { About } from './components/Home/About';
+import { Footer } from './components/Home/Footer';
+import { Gallery } from './components/Home/Gallery';
+import { Hero } from './components/Home/Hero';
 import { Testimonial } from './components/Home/Testimonial';
+import { Navbar } from './components/Navbar';
 
 function App() {
   return (
