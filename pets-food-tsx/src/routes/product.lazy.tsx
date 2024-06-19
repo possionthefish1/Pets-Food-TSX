@@ -8,6 +8,7 @@ import {
   Image,
   Select,
   Stack,
+  Text,
   useDisclosure,
 } from '@chakra-ui/react';
 
@@ -178,20 +179,55 @@ function ProductCard({ product }: ProductCardProps) {
 function Product() {
   return (
     // @bm-g todo: Fix later...
-    <section className='container mx-auto grid grid-cols-[repeat(auto-fit,_minmax(400px,_1fr))] justify-items-center gap-4 pt-20'>
-      {/* <Stack
+    <>
+      <Category />
+      <section className='container mx-auto grid grid-cols-[repeat(auto-fit,_minmax(400px,_1fr))] justify-items-center gap-4 pt-8 md:pt-20'>
+        {/* <Stack
         wrap={'wrap'}
         justify={'space-between'}
         spacing={4}
         direction='row'
       > */}
-      {products.map((product) => (
-        <ProductCard
-          key={product.id}
-          product={product}
-        />
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+          />
+        ))}
+        {/* </Stack> */}
+      </section>
+    </>
+  );
+}
+
+const categories = ['dog food', 'cat food', 'toys'];
+
+function Category() {
+  return (
+    <article className='container mx-auto flex flex-nowrap justify-center mt-20 gap-4'>
+      {categories.map((cate) => (
+        <Card
+          key={cate}
+          direction='column'
+          overflow='hidden'
+          variant='outline'
+          width={{base:'100%', sm:'75%', md:'15%'}}
+        >
+          <Image
+            objectFit='cover'
+            maxW='100%'
+            src='https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60'
+            alt='Caffe Latte'
+          />
+
+          <Stack>
+            <CardBody>
+              <Heading size={{md: 'md', sm:'sm'}}>{cate}</Heading>
+
+            </CardBody>
+          </Stack>
+        </Card>
       ))}
-      {/* </Stack> */}
-    </section>
+    </article>
   );
 }
