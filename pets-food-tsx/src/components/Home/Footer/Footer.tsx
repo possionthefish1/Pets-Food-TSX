@@ -42,8 +42,8 @@ function Footer() {
               Dog Treats
             </h4>
             <p className='text-pretty text-md text-slate-500'>
-              Providing the finest quality ingredients specially
-              formulated for your dog.
+              Made only from the most premium ingredients, for your
+              beloved pets💖.
             </p>
           </div>
           {lists.map((list) => (

@@ -178,7 +178,7 @@ function ProductCard({ product }: ProductCardProps) {
 function Product() {
   return (
     // @bm-g todo: Fix later...
-    <section className='container mx-auto grid grid-cols-[repeat(auto-fit,_minmax(400px,_1fr))] gap-4 pt-20'>
+    <section className='container mx-auto grid grid-cols-[repeat(auto-fit,_minmax(400px,_1fr))] justify-items-center gap-4 pt-20'>
       {/* <Stack
         wrap={'wrap'}
         justify={'space-between'}
