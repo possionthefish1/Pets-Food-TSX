@@ -177,20 +177,21 @@ function ProductCard({ product }: ProductCardProps) {
 
 function Product() {
   return (
-    <section className='container mx-auto pt-20'>
-      <Stack
+    // @bm-g todo: Fix later...
+    <section className='container mx-auto grid grid-cols-[repeat(auto-fit,_minmax(400px,_1fr))] gap-4 pt-20'>
+      {/* <Stack
         wrap={'wrap'}
         justify={'space-between'}
         spacing={4}
         direction='row'
-      >
-        {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-          />
-        ))}
-      </Stack>
+      > */}
+      {products.map((product) => (
+        <ProductCard
+          key={product.id}
+          product={product}
+        />
+      ))}
+      {/* </Stack> */}
     </section>
   );
 }
