@@ -28,69 +28,154 @@ type Product = {
 const products: Product[] = [
   {
     id: 1,
-    src: 'dog/dog_food_1.jpeg',
+    src: 'dog_food_1.avif',
     price: 34.99,
     title: 'dog food chicken flavor',
   },
   {
     id: 2,
-    src: 'dog/dog_food_2.jpeg',
+    src: 'dog_food_2.avif',
     price: 34.99,
     title: 'dog food beef flavor',
   },
   {
     id: 3,
-    src: 'dog/dog_food_3.jpeg',
+    src: 'dog_food_3.avif',
     price: 34.99,
     title: 'dog food pork liver flavor',
   },
   {
     id: 7,
-    src: 'cat/cat_snack_7.jpeg',
+    src: 'cat_snack_7.avif',
     price: 34.99,
     title: 'dog food pork liver flavor',
   },
   {
     id: 8,
-    src: 'cat/cat_snack_1.jpeg',
+    src: 'cat_snack_1.avif',
     price: 34.99,
     title: 'dog food pork liver flavor',
   },
   {
     id: 9,
-    src: 'cat/cat_snack_4.jpeg',
+    src: 'cat_snack_4.avif',
     price: 34.99,
     title: 'dog food pork liver flavor',
   },
   {
     id: 10,
-    src: 'cat/cat_toy_1.jpeg',
+    src: 'cat_toy_1.avif',
     price: 34.99,
     title: 'dog food pork liver flavor',
   },
   {
     id: 11,
-    src: 'cat/cat_toy_2.jpeg',
+    src: 'cat_toy_2.avif',
     price: 34.99,
     title: 'dog food pork liver flavor',
   },
   {
     id: 12,
-    src: 'dog/dog_toy_1.jpeg',
+    src: 'dog_toy_1.avif',
     price: 34.99,
     title: 'dog food pork liver flavor',
   },
   {
     id: 13,
-    src: 'dog/dog_toy_3.jpeg',
+    src: 'dog_toy_3.avif',
     price: 34.99,
     title: 'dog food pork liver flavor',
   },
 ];
 
-function Product() {
+type ProductCardProps = {
+  product: Product;
+};
+
+function ProductCard({ product }: ProductCardProps) {
   const { isOpen, onToggle } = useDisclosure();
 
+  return (
+    <Card
+      variant='elevated'
+      maxW='sm'
+      onMouseEnter={onToggle}
+      onMouseLeave={onToggle}
+    >
+      <CardBody>
+        <Collapse in={isOpen}>
+          <Box
+            bg='white'
+            // className='bg-rose-400'
+            pb={isOpen ? '2' : '0'}
+            mt='2'
+            rounded='md'
+            shadow='md'
+          >
+            <Select
+              display='inline-block'
+              w={'20%'}
+              variant='outline'
+              borderRadius={'none'}
+              borderTopLeftRadius='10px'
+              borderBottomLeftRadius='10px'
+            >
+              {Array.from({ length: 10 }, (_x, i) => (
+                <option
+                  key={`option${i + 1}`}
+                  value={i + 1}
+                >
+                  {i + 1}
+                </option>
+              ))}
+            </Select>
+
+            <Button
+              color='white'
+              fontSize='xl'
+              bg='#fb7185'
+              display='inline-block'
+              borderRadius={'none'}
+              w={'80%'}
+              _hover={{ bg: '#fda4af' }}
+              borderTopRightRadius='10px'
+              borderBottomRightRadius='10px'
+            >
+              Add to Cart
+            </Button>
+          </Box>
+        </Collapse>
+        <Image
+          src={product.src}
+          alt='Green double couch with wooden legs'
+          borderRadius='lg'
+        />
+        <Stack
+          mt='6'
+          spacing='3'
+        >
+          <Heading
+            as='h3'
+            fontSize='xl'
+            className='text-amber-800'
+          >
+            ${product.price}
+          </Heading>
+          <Heading
+            size='md'
+            as='h2'
+            fontSize='2xl'
+            textTransform={'capitalize'}
+          >
+            {product.title}
+          </Heading>
+        </Stack>
+      </CardBody>
+    </Card>
+  );
+}
+
+function Product() {
   return (
     <section className='container mx-auto pt-20'>
       <Stack
@@ -100,83 +185,10 @@ function Product() {
         direction='row'
       >
         {products.map((product) => (
-          <Card
+          <ProductCard
             key={product.id}
-            variant='elevated'
-            maxW='sm'
-            onMouseEnter={onToggle}
-            onMouseLeave={onToggle}
-          >
-            <CardBody>
-              <Collapse in={isOpen}>
-                <Box
-                  bg='white'
-                  // className='bg-rose-400'
-                  pb={isOpen ? '2' : '0'}
-                  mt='2'
-                  rounded='md'
-                  shadow='md'
-                >
-                  <Select
-                    display='inline-block'
-                    w={'20%'}
-                    variant='outline'
-                    borderRadius={'none'}
-                    borderTopLeftRadius='10px'
-                    borderBottomLeftRadius='10px'
-                  >
-                    {Array.from({ length: 10 }, (_x, i) => (
-                      <option
-                        key={`option${i + 1}`}
-                        value={i + 1}
-                      >
-                        {i + 1}
-                      </option>
-                    ))}
-                  </Select>
-
-                  <Button
-                    color='white'
-                    fontSize='xl'
-                    bg='#fb7185'
-                    display='inline-block'
-                    borderRadius={'none'}
-                    w={'80%'}
-                    _hover={{ bg: '#fda4af' }}
-                    borderTopRightRadius='10px'
-                    borderBottomRightRadius='10px'
-                  >
-                    Add to Cart
-                  </Button>
-                </Box>
-              </Collapse>
-              <Image
-                src={product.src}
-                alt='Green double couch with wooden legs'
-                borderRadius='lg'
-              />
-              <Stack
-                mt='6'
-                spacing='3'
-              >
-                <Heading
-                  as='h3'
-                  fontSize='xl'
-                  className='text-amber-800'
-                >
-                  ${product.price}
-                </Heading>
-                <Heading
-                  size='md'
-                  as='h2'
-                  fontSize='2xl'
-                  textTransform={'capitalize'}
-                >
-                  {product.title}
-                </Heading>
-              </Stack>
-            </CardBody>
-          </Card>
+            product={product}
+          />
         ))}
       </Stack>
     </section>

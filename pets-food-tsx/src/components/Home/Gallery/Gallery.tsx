@@ -1,24 +1,24 @@
 //@bm-b array of products
 const products = [
   {
-    src: '/dog/dog_food_3.jpeg',
+    src: 'dog_food_3.avif',
     title: 'Dog Food',
     content:
       'From natural ingredients, appeal to a wide range of dog breeds and needs.',
   },
   {
-    src: '/cat/cat_snack_1.jpeg',
+    src: 'cat_snack_1.avif',
     title: 'Cat Snack',
     content:
       'From natural ingredients, appeal to a wide range of cat breeds and needs.',
   },
   {
-    src: '/cat/cat_toy_1.jpeg',
+    src: 'cat_toy_1.avif',
     title: 'Cat Toy',
     content: "Toys that are suitable for cat's playtime.",
   },
   {
-    src: '/dog/dog_toy_1.jpeg',
+    src: 'dog_toy_1.avif',
     title: 'Dog Toy',
     content: "Toys that are suitable for dog's playtime.",
   },
@@ -71,7 +71,7 @@ function Gallery() {
             <div className='overflow-hidden'>
               <img
                 className='object-cover object-bottom transition-all hover:scale-105 min-[340px]:object-center min-[340px]:pb-[30px]'
-                src='/dog/dog_food_3.jpeg'
+                src='dog_food_3.avif'
                 alt='Dog Food'
               />
             </div>
@@ -89,7 +89,7 @@ function Gallery() {
           <div className='overflow-hidden bg-white transition-all'>
             <img
               className='w-full overflow-hidden transition-all hover:scale-110'
-              src='/cat/cat_snack_1.jpeg'
+              src='cat_snack_1.avif'
               alt='Cat Snack'
             />
           </div>
@@ -108,7 +108,7 @@ function Gallery() {
           <div className='overflow-hidden bg-white transition-all'>
             <img
               className='w-full overflow-hidden transition-all hover:scale-110'
-              src='/cat/cat_toy_1.jpeg'
+              src='cat_toy_1.avif'
               alt='Cat Toy'
             />
           </div>
