@@ -1,15 +1,12 @@
 import {
-  Box,
   Button,
   Card,
   CardBody,
-  Collapse,
+  Flex,
   Heading,
   Image,
   Select,
   Stack,
-  Text,
-  useDisclosure,
 } from '@chakra-ui/react';
 
 import { createLazyFileRoute } from '@tanstack/react-router';
@@ -94,58 +91,12 @@ type ProductCardProps = {
 };
 
 function ProductCard({ product }: ProductCardProps) {
-  const { isOpen, onToggle } = useDisclosure();
-
   return (
     <Card
       variant='elevated'
       maxW='sm'
-      onMouseEnter={onToggle}
-      onMouseLeave={onToggle}
     >
       <CardBody>
-        <Collapse in={isOpen}>
-          <Box
-            bg='white'
-            // className='bg-rose-400'
-            pb={isOpen ? '2' : '0'}
-            mt='2'
-            rounded='md'
-            shadow='md'
-          >
-            <Select
-              display='inline-block'
-              w={'20%'}
-              variant='outline'
-              borderRadius={'none'}
-              borderTopLeftRadius='10px'
-              borderBottomLeftRadius='10px'
-            >
-              {Array.from({ length: 10 }, (_x, i) => (
-                <option
-                  key={`option${i + 1}`}
-                  value={i + 1}
-                >
-                  {i + 1}
-                </option>
-              ))}
-            </Select>
-
-            <Button
-              color='white'
-              fontSize='xl'
-              bg='#fb7185'
-              display='inline-block'
-              borderRadius={'none'}
-              w={'80%'}
-              _hover={{ bg: '#fda4af' }}
-              borderTopRightRadius='10px'
-              borderBottomRightRadius='10px'
-            >
-              Add to Cart
-            </Button>
-          </Box>
-        </Collapse>
         <Image
           src={product.src}
           alt='Green double couch with wooden legs'
@@ -170,6 +121,46 @@ function ProductCard({ product }: ProductCardProps) {
           >
             {product.title}
           </Heading>
+          <Flex
+            bg='white'
+            // className='bg-rose-400'
+            mt='2'
+            rounded='md'
+            shadow='md'
+          >
+            <Select
+              display='inline-block'
+              w={'fit-content'}
+              variant='outline'
+              borderRadius={'none'}
+              borderTopLeftRadius='10px'
+              borderBottomLeftRadius='10px'
+            >
+              {Array.from({ length: 10 }, (_x, i) => (
+                <option
+                  key={`option${i + 1}`}
+                  value={i + 1}
+                >
+                  {i + 1}
+                </option>
+              ))}
+            </Select>
+
+            <Button
+              color='white'
+              fontSize='xl'
+              bg='#fb7185'
+              display='inline-block'
+              borderRadius={'none'}
+              // w={'fit-content'}
+              flexGrow={'1'}
+              _hover={{ bg: '#fda4af' }}
+              borderTopRightRadius='10px'
+              borderBottomRightRadius='10px'
+            >
+              Add to Cart
+            </Button>
+          </Flex>
         </Stack>
       </CardBody>
     </Card>
@@ -181,7 +172,7 @@ function Product() {
     // @bm-g todo: Fix later...
     <>
       <Category />
-      <section className='container mx-auto grid grid-cols-[repeat(auto-fit,_minmax(400px,_1fr))] justify-items-center gap-4 pt-8 md:pt-20'>
+      <section className='container mx-auto grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] justify-items-center gap-4 pt-8 md:grid-cols-[repeat(auto-fit,_minmax(450px,_1fr))] lg:gap-8 md:pt-20'>
         {/* <Stack
         wrap={'wrap'}
         justify={'space-between'}
@@ -200,30 +191,41 @@ function Product() {
   );
 }
 
-const categories = ['dog food', 'cat food', 'toys'];
+const categories = [
+  {
+    title: 'Dog Products',
+    src: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  },
+  {
+    title: 'Cat Products',
+    src: 'https://images.unsplash.com/photo-1574158622682-e40e69881006?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  },
+];
 
 function Category() {
   return (
-    <article className='container mx-auto flex flex-nowrap justify-center mt-20 gap-4'>
-      {categories.map((cate) => (
+    <article className='container mx-auto mt-20 flex flex-nowrap justify-center gap-4'>
+      {categories.map(({ title, src }) => (
         <Card
-          key={cate}
+          key={title}
           direction='column'
           overflow='hidden'
           variant='outline'
-          width={{base:'100%', sm:'75%', md:'15%'}}
+          width={{ base: '100%', sm: '80%', md: '20%' }}
         >
           <Image
             objectFit='cover'
             maxW='100%'
-            src='https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60'
-            alt='Caffe Latte'
+            src={src}
+            alt={title}
+            aspectRatio={'1/1'}
           />
 
           <Stack>
             <CardBody>
-              <Heading size={{md: 'md', sm:'sm'}}>{cate}</Heading>
-
+              <Heading size={{ md: 'md', sm: 'sm' }}>
+                {title}
+              </Heading>
             </CardBody>
           </Stack>
         </Card>
