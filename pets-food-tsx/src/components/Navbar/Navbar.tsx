@@ -144,7 +144,7 @@ function Navbar() {
             viewBox='0 0 24 24'
             strokeWidth='1.5'
             stroke='currentColor'
-            className='transition-all md:h-6 md:w-6 hover:scale-125'
+            className='transition-all md:h-6 md:w-6 focus:scale-125 hover:scale-125'
           >
             <path
               strokeLinecap='round'
