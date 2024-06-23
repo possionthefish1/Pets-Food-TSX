@@ -107,7 +107,6 @@ function ProductCard({ product }: ProductCardProps) {
     <Card
       variant='elevated'
       maxW='sm'
-      onClick={() => console.log('abcdef')}
     >
       <CardBody>
         <Image
@@ -182,19 +181,23 @@ function ProductCard({ product }: ProductCardProps) {
 
 function Product() {
   const [selectedCategory, setSelectedCategory] =
-    React.useState('dog');
-
+    React.useState(products);
   /* @bm-g Derived State */
-  const selectedProducts =
-    selectedCategory === 'dog'
-      ? products.filter((product) => product.type === 'dog')
-      : products.filter((product) => product.type === 'cat');
 
   return (
     <>
-      <Category setSelectedCategory={setSelectedCategory} />
-      <section className='container mx-auto grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] justify-items-center gap-4 pt-8 md:grid-cols-[repeat(auto-fit,_minmax(450px,_1fr))] lg:gap-8 md:pt-20'>
-        {selectedProducts.map((product) => (
+      <Category
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
+      />
+      <p className='mt-8 text-center text-3xl capitalize'>
+        {selectedCategory.length > 5
+          ? 'All'
+          : selectedCategory[0].type}{' '}
+        Products
+      </p>
+      <section className='container mx-auto grid grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] justify-items-center gap-4 pt-8 md:grid-cols-[repeat(auto-fit,_minmax(450px,_1fr))] lg:gap-8'>
+        {selectedCategory.map((product) => (
           <ProductCard
             key={product.id}
             product={product}
@@ -206,6 +209,11 @@ function Product() {
 }
 
 const categories = [
+  {
+    title: 'All Products',
+    type: 'all',
+    src: 'https://images.unsplash.com/photo-1563460716037-460a3ad24ba9?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  },
   {
     title: 'Dog Products',
     type: 'dog',
@@ -219,7 +227,10 @@ const categories = [
 ];
 
 type CategoryProp = {
-  setSelectedCategory: (target: string) => void;
+  selectedCategory: Product[];
+  // biome-ignore lint/complexity/noBannedTypes: <explanation>
+  setSelectedCategory: Function;
+  // todo: Fix later Don't Delete!
 };
 
 function Category({ setSelectedCategory }: CategoryProp) {
@@ -245,9 +256,17 @@ function Category({ setSelectedCategory }: CategoryProp) {
             type='button'
             key={title}
             onClick={() => {
-              const nextSelected = type;
-              setSelectedCategory('nextSelected');
-              console.log(nextSelected);
+              if (type === 'all') {
+                const nextSelected = [...products];
+                setSelectedCategory(products);
+                console.log(nextSelected);
+              } else {
+                const nextSelected = products.filter(
+                  (product) => product.type === type,
+                );
+                setSelectedCategory(nextSelected);
+                console.log(nextSelected);
+              }
             }}
           >
             <Image
