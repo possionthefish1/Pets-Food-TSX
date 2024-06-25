@@ -179,16 +179,34 @@ function ProductCard({ product }: ProductCardProps) {
   );
 }
 
+enum AllowedCategories {
+  All = 'all',
+  Dog = 'dog',
+  Cat = 'cat',
+}
+
 function Product() {
   const [selectedCategory, setSelectedCategory] =
     React.useState(products);
   /* @bm-g Derived State */
 
+  const handleSelectCategory = (type: AllowedCategories) => {
+    if (type === 'all') {
+      const nextSelected = [...products];
+      setSelectedCategory(nextSelected);
+    } else {
+      const nextSelected = products.filter(
+        (product) => product.type === type,
+      );
+      setSelectedCategory(nextSelected);
+    }
+  };
+
   return (
     <>
       <Category
         selectedCategory={selectedCategory}
-        setSelectedCategory={setSelectedCategory}
+        onSelectCategory={handleSelectCategory}
       />
       <p className='mt-8 text-center text-3xl capitalize'>
         {selectedCategory.length > 5
@@ -208,32 +226,36 @@ function Product() {
   );
 }
 
-const categories = [
+type categoryT = {
+  title: string;
+  type: AllowedCategories;
+  src: string;
+};
+
+const categories: categoryT[] = [
   {
     title: 'All Products',
-    type: 'all',
+    type: AllowedCategories.All,
     src: 'https://images.unsplash.com/photo-1563460716037-460a3ad24ba9?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
   {
     title: 'Dog Products',
-    type: 'dog',
+    type: AllowedCategories.Dog,
     src: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
   {
     title: 'Cat Products',
-    type: 'cat',
+    type: AllowedCategories.Cat,
     src: 'https://images.unsplash.com/photo-1574158622682-e40e69881006?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
 ];
 
 type CategoryProp = {
   selectedCategory: Product[];
-  // biome-ignore lint/complexity/noBannedTypes: <explanation>
-  setSelectedCategory: Function;
-  // todo: Fix later Don't Delete!
+  onSelectCategory: (type: AllowedCategories) => void;
 };
 
-function Category({ setSelectedCategory }: CategoryProp) {
+function Category({ onSelectCategory }: CategoryProp) {
   return (
     <article className='container mx-auto mt-20 flex flex-nowrap justify-center gap-4'>
       {categories.map(({ title, type, src }) => (
@@ -256,17 +278,7 @@ function Category({ setSelectedCategory }: CategoryProp) {
             type='button'
             key={title}
             onClick={() => {
-              if (type === 'all') {
-                const nextSelected = [...products];
-                setSelectedCategory(products);
-                console.log(nextSelected);
-              } else {
-                const nextSelected = products.filter(
-                  (product) => product.type === type,
-                );
-                setSelectedCategory(nextSelected);
-                console.log(nextSelected);
-              }
+              onSelectCategory(type);
             }}
           >
             <Image
