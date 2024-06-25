@@ -1,12 +1,12 @@
 import { Link } from '@tanstack/react-router';
 
-type List = {
+type ListT = {
   title: string;
   contents: { text: string; link: string; hash?: string }[];
 };
 
 // @bm-b list provider
-const lists: List[] = [
+const lists: ListT[] = [
   {
     title: 'LINK',
     contents: [
