@@ -14,8 +14,8 @@ import { useRef } from 'react';
 function Logo() {
   return (
     <div className='container relative text-nowrap text-wrapper'>
-      <a
-        href='/Pet_Food/index.html'
+      <Link
+        to='/'
         className='font-lemon text-3xl text-white'
       >
         <span className='bounce'>P</span>
@@ -26,7 +26,7 @@ function Logo() {
         <span className='bounce'>o</span>
         <span className='bounce'>o</span>
         <span className='bounce'>d</span>
-      </a>
+      </Link>
     </div>
   );
 }
@@ -52,7 +52,8 @@ function Destinations() {
       </li>
       <li>
         <Link
-          to='/about'
+          to='/'
+          hash='about'
           className='underline-offset-4 hover:underline'
         >
           About Us
@@ -136,22 +137,27 @@ function Navbar() {
       <ul className='ml-auto hidden items-center justify-center gap-8 text-nowrap font-mono text-lg text-white min-[2560px]:ml-0 md:flex md:gap-8 md:text-base'>
         <Destinations />
         <li>
-          <svg
-            role='graphics-symbol'
+          <button
+            type='button'
+            className='group'
             aria-label='Check Products in Cart'
-            xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 24 24'
-            strokeWidth='1.5'
-            stroke='currentColor'
-            className='transition-all md:h-6 md:w-6 focus:scale-125 hover:scale-125'
           >
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              d='M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z'
-            />
-          </svg>
+            <svg
+              role='graphics-symbol'
+              xmlns='http://www.w3.org/2000/svg'
+              fill='none'
+              viewBox='0 0 24 24'
+              strokeWidth='1.5'
+              stroke='currentColor'
+              className='transition-all md:h-6 md:w-6 group-focus:scale-125 group-hover:scale-125'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                d='M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z'
+              />
+            </svg>
+          </button>
         </li>
       </ul>
     );

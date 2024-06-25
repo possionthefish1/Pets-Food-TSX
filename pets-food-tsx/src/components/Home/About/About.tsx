@@ -27,7 +27,8 @@ function SmallAbout() {
           numquam vero repellendus ipsam!
         </p>
         <Link
-          to='/about'
+          to='/'
+          hash='about'
           className='w-fit rounded-md bg-rose-400 px-10 py-4 text-center font-bold text-white text-xl uppercase transition-all duration-500 hover:border-rose-700 hover:bg-rose-700'
         >
           Discover who we are
@@ -63,7 +64,8 @@ function BigAbout() {
           numquam vero repellendus ipsam!
         </p>
         <Link
-          to='/about'
+          to='/'
+          hash='about'
           className='w-fit text-nowrap rounded-md bg-rose-400 px-10 py-4 text-center font-bold text-white text-xl uppercase transition-all duration-500 hover:border-rose-700 hover:bg-rose-700'
         >
           Discover who we are
@@ -86,7 +88,10 @@ function BigAbout() {
 
 function About() {
   return (
-    <section className='container mx-auto my-8 max-w-[1280px] overflow-hidden rounded-none bg-slate-100 md:my-24'>
+    <section
+      className='container mx-auto my-8 max-w-[1280px] overflow-hidden rounded-none bg-slate-100 md:my-24'
+      id='about'
+    >
       <SmallAbout />
       <BigAbout />
     </section>
