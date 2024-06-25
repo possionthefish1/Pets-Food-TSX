@@ -27,7 +27,6 @@ const lists: ListT[] = [
   },
   {
     title: 'CONTACT',
-    link: '/',
     contents: [
       { text: 'Dog Food', link: '/' },
       { text: 'Bangkok', link: '/' },
