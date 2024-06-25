@@ -1,11 +1,19 @@
-const lists = [
+import { Link } from '@tanstack/react-router';
+
+type List = {
+  title: string;
+  contents: { text: string; link: string; hash?: string }[];
+};
+
+// @bm-b list provider
+const lists: List[] = [
   {
     title: 'LINK',
     contents: [
       { text: 'Home', link: '/' },
-      { text: 'Product', link: '/' },
-      { text: 'About', link: '/' },
-      { text: 'Contact', link: '/' },
+      { text: 'Product', link: '/product' },
+      { text: 'About', link: '/', hash: 'about' },
+      { text: 'Contact', link: '/', hash: 'contact' },
     ],
   },
   {
@@ -53,8 +61,14 @@ function Footer() {
               </h5>
               <ul className='grid gap-y-2 text-slate-600'>
                 {list.contents.map((content) => (
+                  // @bm-b links map
                   <li key={content.text}>
-                    <a href={list.link}>{content.text}</a>
+                    <Link
+                      to={content.link}
+                      hash={content.hash}
+                    >
+                      {content.text}
+                    </Link>
                   </li>
                 ))}
               </ul>

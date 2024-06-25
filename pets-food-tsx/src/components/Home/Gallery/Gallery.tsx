@@ -63,7 +63,10 @@ function BigGallery() {
 
 function Gallery() {
   return (
-    <section className='container mx-auto my-8 max-w-[900px] md:my-24'>
+    <section
+      id='gallery'
+      className='container mx-auto my-8 max-w-[900px] md:my-24'
+    >
       <Intro />
       <div className='grid auto-rows-auto grid-cols-2 gap-4 md:hidden'>
         <div className='col-span-full grid grid-cols-subgrid overflow-hidden'>

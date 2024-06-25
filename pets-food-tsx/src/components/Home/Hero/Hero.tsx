@@ -1,6 +1,8 @@
 /* import React from "react";
 import styles from "./Hero.module.css"; */
 
+import { Link } from '@tanstack/react-router';
+
 function Hero() {
   return (
     <section className='pt-6 md:pt-0'>
@@ -23,18 +25,19 @@ function Hero() {
             Good for Pet, Good for Owner
           </h2>
           <div className='ubuntu-mono-bold flex flex-row items-center justify-center gap-2 text-nowrap text-sm uppercase md:gap-4 *:rounded-md *:md:px-16 *:px-3 *:sm:px-8 *:md:py-4 *:py-1 *:sm:py-2 *:font-bold md:text-xl *:transition-all *:duration-500'>
-            <a
-              href='/'
+            <Link
+              to='/'
+              hash='gallery'
               className='hidden border-2 border-rose-400 border-solid bg-transparent text-rose-400 sm:block hover:border-rose-700 hover:text-white hover:shadow-[0_0_40px_40px_rgb(190,18,60)_inset]'
             >
               view more
-            </a>
-            <a
-              href='/'
+            </Link>
+            <Link
+              to='/'
               className='border-2 border-rose-400 border-solid bg-red-400 text-white hover:border-rose-700 hover:bg-rose-700'
             >
               register
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -35,12 +35,12 @@ function Destinations() {
   return (
     <>
       <li>
-        <a
+        <Link
           href='/'
           className='underline underline-offset-4'
         >
           Home
-        </a>
+        </Link>
       </li>
       <li>
         <Link
@@ -69,12 +69,12 @@ function Destinations() {
         </Link>
       </li>
       <li>
-        <a
+        <Link
           href='/'
           className='underline-offset-4 hover:underline'
         >
           Sign In
-        </a>
+        </Link>
       </li>
     </>
   );
