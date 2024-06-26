@@ -38,7 +38,7 @@ function Destinations() {
       <li>
         <Link
           to='/'
-          className='underline underline-offset-4'
+          className='underline-offset-4 hover:underline'
         >
           Home
         </Link>
