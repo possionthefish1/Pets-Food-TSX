@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react';
 import { Link } from '@tanstack/react-router';
 import { useRef } from 'react';
+import { SignInModal } from '../SignInModal';
 
 function Logo() {
   return (
@@ -171,6 +172,7 @@ function Navbar() {
         <DrawerExample />
         <MobileNav />
         <MediumNav />
+        <SignInModal />
       </nav>
     </header>
   );
