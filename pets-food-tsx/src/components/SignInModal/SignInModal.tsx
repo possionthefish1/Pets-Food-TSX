@@ -1,5 +1,10 @@
 import {
   Button,
+  FormControl,
+  FormErrorMessage,
+  FormHelperText,
+  FormLabel,
+  Input,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -10,12 +15,44 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 
+import { useState } from 'react';
+import type React from 'react';
 function SignInModal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const [input, setInput] = useState('');
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+  ) => setInput(e.target.value);
+  const isError = input === '';
+
+  // function validateName(value: string) {
+  //   let error = '';
+  //   if (!value) {
+  //     error = 'Name is required';
+  //   } else if (value.toLowerCase() !== 'naruto') {
+  //     error = "Jeez! You're not a fan 😱";
+  //   }
+  //   return error;
+  // }
+
   return (
     <>
-      <Button onClick={onOpen}>Open Modal</Button>
+      <Button
+        onClick={onOpen}
+        _hover={{
+          bg: 'none',
+          textDecoration: 'underline',
+          textUnderlineOffset: '4px',
+        }}
+        bg={'none'}
+        color={'white'}
+        padding={0}
+        fontWeight={'normal'}
+      >
+        Sign In
+      </Button>
 
       <Modal
         closeOnOverlayClick={false}
@@ -27,16 +64,25 @@ function SignInModal() {
           <ModalHeader>Create your account</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
-            Lorem ipsum, dolor sit amet consectetur adipisicing
-            elit. Asperiores doloremque dignissimos dicta ea maxime
-            deleniti, mollitia at repellat aliquid debitis enim
-            exercitationem pariatur in ipsa nam laudantium
-            voluptatibus labore! Provident. Distinctio illum quis,
-            nostrum voluptatem sapiente, maxime earum saepe
-            explicabo amet similique tempora labore consectetur
-            itaque sequi dolorum blanditiis aperiam animi, deleniti
-            repellendus? Voluptatibus, assumenda incidunt ratione
-            quibusdam quod doloremque.
+            {/* <FormControl isInvalid={isError}> */}
+            <FormControl>
+              <FormLabel>Email</FormLabel>
+              <Input
+                type='email'
+                value={input}
+                onChange={handleInputChange}
+              />
+              {isError ? (
+                <FormErrorMessage>
+                  Email is required.
+                </FormErrorMessage>
+              ) : (
+                <FormHelperText>
+                  Enter the email you'd like to receive the
+                  newsletter on.
+                </FormHelperText>
+              )}
+            </FormControl>
           </ModalBody>
 
           <ModalFooter>

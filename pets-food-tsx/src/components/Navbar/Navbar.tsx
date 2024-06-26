@@ -70,12 +70,7 @@ function Destinations() {
         </Link>
       </li>
       <li>
-        <Link
-          href='/'
-          className='underline-offset-4 hover:underline'
-        >
-          Sign In
-        </Link>
+        <SignInModal />
       </li>
     </>
   );
@@ -172,7 +167,6 @@ function Navbar() {
         <DrawerExample />
         <MobileNav />
         <MediumNav />
-        <SignInModal />
       </nav>
     </header>
   );
