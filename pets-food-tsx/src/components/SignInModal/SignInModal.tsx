@@ -1,10 +1,14 @@
 import {
   Button,
+  ButtonGroup,
+  Flex,
+  FormControl,
+  FormLabel,
+  Input,
   Modal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
-  ModalFooter,
   ModalHeader,
   ModalOverlay,
   useDisclosure,
@@ -26,8 +30,9 @@ function SignInModal() {
     formState: { errors },
   } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) =>
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log('Form Submit', data);
+  };
 
   console.log(watch('email'));
   console.log(watch('password'));
@@ -60,28 +65,55 @@ function SignInModal() {
           <ModalCloseButton />
           <ModalBody pb={6}>
             <form onSubmit={handleSubmit(onSubmit)}>
-              {/* register your input into the hook by invoking the "register" function */}
-              <input
-                defaultValue='test'
-                {...register('email')}
-              />
+              <FormControl>
+                <FormLabel>Email</FormLabel>
+                <Input
+                  defaultValue=''
+                  {...register('email', { required: true })}
+                />
+              </FormControl>
 
-              {/* include validation with required or other standard HTML validation rules */}
-              <input
-                {...register('password', { required: true })}
-              />
-              {/* errors will return when field validation fails  */}
-              {errors.password && (
-                <span>This field is required</span>
-              )}
-              <Button
-                colorScheme='blue'
-                mr={3}
-                type='submit'
+              <span
+                style={
+                  errors.email
+                    ? { opacity: 1, color: 'rgb(244 63 94)' }
+                    : { opacity: 0 }
+                }
               >
-                Submit
-              </Button>
-              <Button onClick={onClose}>Cancel</Button>
+                Email field is required
+              </span>
+              <FormControl>
+                <FormLabel>Password</FormLabel>
+                <Input
+                  defaultValue=''
+                  {...register('password', { required: true })}
+                />
+              </FormControl>
+              <span
+                style={
+                  errors.password
+                    ? { opacity: 1, color: 'rgb(244 63 94)' }
+                    : { opacity: 0 }
+                }
+              >
+                Password field is required
+              </span>
+              <Flex>
+                <Button
+                  type='submit'
+                  colorScheme='blue'
+                  mt={4}
+                  mr={3}
+                >
+                  Submit
+                </Button>
+                <Button
+                  mt={4}
+                  onClick={onClose}
+                >
+                  Cancel
+                </Button>
+              </Flex>
             </form>
           </ModalBody>
         </ModalContent>
