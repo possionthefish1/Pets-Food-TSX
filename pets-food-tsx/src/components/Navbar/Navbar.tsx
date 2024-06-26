@@ -189,7 +189,6 @@ function DrawerExample() {
       >
         <i className='fa-sharp fa-solid fa-bars' />
       </Button>
-      {/*   flex  w-full items-center justify-center bg-white/50 opacity-0 backdrop-blur transition-all duration-[600ms] md:hidden */}
       <Drawer
         size='full'
         isOpen={isOpen}

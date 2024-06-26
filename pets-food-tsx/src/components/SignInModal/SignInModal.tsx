@@ -1,6 +1,5 @@
 import {
   Button,
-  ButtonGroup,
   Flex,
   FormControl,
   FormLabel,
@@ -26,7 +25,7 @@ function SignInModal() {
   const {
     register,
     handleSubmit,
-    watch,
+    // watch,
     formState: { errors },
   } = useForm<Inputs>();
 
@@ -34,8 +33,8 @@ function SignInModal() {
     console.log('Form Submit', data);
   };
 
-  console.log(watch('email'));
-  console.log(watch('password'));
+  // console.log(watch('email'));
+  // console.log(watch('password'));
 
   return (
     <>
@@ -47,9 +46,10 @@ function SignInModal() {
           textUnderlineOffset: '4px',
         }}
         bg={'none'}
-        color={'white'}
+        color={{ base: 'black', md: 'white' }}
         padding={0}
         fontWeight={'normal'}
+        fontSize={{ base: '1.5rem', md: '1rem' }}
       >
         Sign In
       </Button>
@@ -58,6 +58,8 @@ function SignInModal() {
         closeOnOverlayClick={false}
         isOpen={isOpen}
         onClose={onClose}
+        motionPreset={'scale'}
+        size={{ base: 'md', lg: 'xl' }}
       >
         <ModalOverlay />
         <ModalContent>
