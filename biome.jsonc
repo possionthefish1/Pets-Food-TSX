@@ -124,7 +124,7 @@
 				"noMisplacedAssertion": "error",
 				// "noReactSpecificProps": "error",
 				"noRestrictedImports": "error",
-				"noUndeclaredDependencies": "error",
+				// "noUndeclaredDependencies": "error",
 				"noUnknownFunction": "error",
 				"noUnknownMediaFeatureName": "error",
 				"noUnknownProperty": "error",
