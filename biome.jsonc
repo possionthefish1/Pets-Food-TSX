@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.8.2/schema.json",
+	"$schema": "https://biomejs.dev/schemas/1.8.3/schema.json",
 	"organizeImports": {
 		"enabled": true
 	},
@@ -9,7 +9,9 @@
 			"**/node_modules/**",
 			"dist",
 			"bin",
-			"routeTree.gen.ts"
+			"routeTree.gen.ts",
+			"src/app/layout.tsx",
+			"src/app/page.tsx"
 		],
 		"ignoreUnknown": true
 	},
