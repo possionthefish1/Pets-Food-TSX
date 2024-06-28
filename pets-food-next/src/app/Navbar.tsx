@@ -132,7 +132,7 @@ function Navbar() {
 
   function MediumNav() {
     return (
-      <ul className='ml-auto hidden items-center justify-center gap-8 text-nowrap text-lg text-white min-[2560px]:ml-0 md:flex md:gap-8 md:text-base'>
+      <ul className='ml-auto hidden items-center justify-center gap-8 text-nowrap text-lg text-white md:flex md:gap-8 md:text-base min-[2560px]:ml-0 sm:hidden'>
         <Destinations />
         <li>
           <button
@@ -147,7 +147,7 @@ function Navbar() {
               viewBox='0 0 24 24'
               strokeWidth='1.5'
               stroke='currentColor'
-              className='transition-all md:h-6 md:w-6 group-focus:scale-125 group-hover:scale-125'
+              className='transition-all group-hover:scale-125 group-focus:scale-125 md:h-6 md:w-6'
             >
               <path
                 strokeLinecap='round'
@@ -164,7 +164,7 @@ function Navbar() {
   return (
     <header className='nav-wrapper fixed top-0 right-0 left-0 z-10 bg-rose-400'>
       {/* <!-- 2xl should become 1 row and span all --> */}
-      <nav className='container relative z-10 mx-auto grid min-w-[300px] grid-cols-2 items-center px-8 py-4 md:grid-cols-[0.5fr_1fr] min-[2560px]:grid-cols-2 md:justify-between min-[2560px]:justify-items-center md:gap-4 md:px-4 min-[2560px]:px-96'>
+      <nav className='container relative z-10 mx-auto grid min-w-[300px] grid-cols-2 items-center px-8 py-4 md:grid-cols-[0.5fr_1fr] md:justify-between md:gap-4 md:px-4 min-[2560px]:grid-cols-2 min-[2560px]:justify-items-center min-[2560px]:px-96'>
         <Logo />
         <DrawerExample />
         <MobileNav />
@@ -176,7 +176,6 @@ function Navbar() {
 
 function DrawerExample() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  // const btnRef = useRef()
   const btnRef = useRef<HTMLButtonElement | null>(null);
 
   return (
@@ -189,6 +188,9 @@ function DrawerExample() {
         hideFrom='md'
         ml='auto'
       >
+        {/* 
+        @bm todo:  import font-awesome 
+        */}
         <i className='fa-sharp fa-solid fa-bars' />
       </Button>
       <Drawer
@@ -213,13 +215,6 @@ function DrawerExample() {
               <Destinations />
             </ul>
           </DrawerBody>
-
-          {/* <DrawerFooter>
-            <Button variant='outline' mr={3} onClick={onClose}>
-              Cancel
-            </Button>
-            <Button colorScheme='blue'>Save</Button>
-          </DrawerFooter> */}
         </DrawerContent>
       </Drawer>
     </>
