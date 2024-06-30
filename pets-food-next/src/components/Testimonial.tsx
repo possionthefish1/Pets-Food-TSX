@@ -141,7 +141,7 @@ function BigTestimonial() {
             // w='100%'
             aspectRatio={1 / 1}
             borderRadius='lg'
-            src='cat_snack_7.avif'
+            src='/images/cat_snack_7.avif'
             alt='Dan Abramov'
           />
         </div>
