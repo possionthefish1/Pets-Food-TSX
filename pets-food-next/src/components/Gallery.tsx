@@ -1,8 +1,4 @@
 import Image from 'next/image';
-import dog_food_3 from './dog_food_3.png'
-import cat_snack_1 from './cat_snack_1.png'
-import cat_toy_1 from './cat_toy_1.png'
-import dog_toy_1 from './dog_toy_1.png'
 
 //@bm-b array of products
 const products = [
@@ -43,7 +39,7 @@ function Intro() {
 
 function BigGallery() {
   return (
-    <div className='container mx-auto hidden grid-cols-2 grid-rows-2 gap-4 md:grid '>
+    <div className='container mx-auto hidden grid-cols-2 grid-rows-2 gap-4 md:grid font-mono'>
       {/* @bm-g todo: replace these with .map(*/}
       {products.map((product) => (
         <div
@@ -52,14 +48,16 @@ function BigGallery() {
         >
           <div className='flex flex-col overflow-hidden transition-all'>
             <div className='grow overflow-hidden rounded-lg'>
-              <Image width={500} height={500} 
+              <Image
+                width={500}
+                height={500}
                 className='rounded-lg transition-all duration-300 ease-in-out hover:scale-105'
                 src={product.src}
                 alt={product.title}
               />
             </div>
             <p className='font-bold'>{product.title}</p>
-            <p className=''>{product.content}</p>
+            <p>{product.content}</p>
           </div>
         </div>
       ))}
@@ -71,34 +69,38 @@ function Gallery() {
   return (
     <section
       id='gallery'
-      className='container mx-auto my-8 max-w-[900px] md:my-24'
+      className='container mx-auto my-8 max-w-[900px] md:my-24 font-mono'
     >
       <Intro />
       <div className='grid auto-rows-auto grid-cols-2 gap-4 md:hidden'>
         <div className='col-span-full grid grid-cols-subgrid overflow-hidden'>
           <div className='col-span-full flex flex-col overflow-hidden bg-white'>
             <div className='overflow-hidden'>
-              <Image width={500} height={500} 
+              <Image
+                width={500}
+                height={500}
                 className='object-cover object-bottom transition-all hover:scale-105 min-[340px]:object-center min-[340px]:pb-[30px]'
-                src={dog_food_3}
+                src={'/images/dog_food_3.avif'}
                 alt='Dog Food'
               />
             </div>
             <div className='ml-6'>
               <p className='font-bold'>Dog Food</p>
-              <p className=''>
+              <p>
                 From natural ingredients, appeal to{' '}
-                <br className='min-[400px]:hidden' /> a wide range
-                of dog breeds and needs.
+                {/* <br className='min-[400px]:hidden' />  */}a wide
+                range of dog breeds and needs.
               </p>
             </div>
           </div>
         </div>
         <div className='row-span-1 row-start-2'>
           <div className='overflow-hidden bg-white transition-all'>
-            <Image width={500} height={500} 
+            <Image
+              width={500}
+              height={500}
               className='w-full overflow-hidden transition-all hover:scale-110'
-              src={cat_snack_1}
+              src={'/images/cat_snack_1.avif'}
               alt='Cat Snack'
             />
           </div>
@@ -115,9 +117,11 @@ function Gallery() {
         </div>
         <div className='row-span-1 row-start-2'>
           <div className='overflow-hidden bg-white transition-all'>
-            <Image width={500} height={500} 
+            <Image
+              width={500}
+              height={500}
               className='w-full overflow-hidden transition-all hover:scale-110'
-              src={cat_toy_1}
+              src={'/images/cat_toy_1.avif'}
               alt='Cat Toy'
             />
           </div>
