@@ -16,12 +16,11 @@ import { SignInModal } from '@/components/SignInModal';
 
 import Link from 'next/link';
 
-import { FaBars } from "react-icons/fa";
-
+import { FaBars } from 'react-icons/fa';
 
 function Logo() {
   return (
-    <div className='container relative text-nowrap text-wrapper'>
+    <div className='container relative text-nowrap text-wrapper '>
       <Link
         href='/'
         className='font-lemon text-3xl text-white'
@@ -191,9 +190,6 @@ function DrawerExample() {
         hideFrom='md'
         ml='auto'
       >
-        {/* 
-        @bm todo:  import font-awesome 
-        */}
         <FaBars className='fa-sharp fa-solid fa-bars' />
       </Button>
       <Drawer

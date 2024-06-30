@@ -1,5 +1,5 @@
-// import React from 'react';
-// import styles from './Testimonial.module.css';
+'use client';
+
 import {
   Grid,
   GridItem,
