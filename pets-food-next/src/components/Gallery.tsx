@@ -1,8 +1,4 @@
 import Image from 'next/image';
-import dog_food_3 from './dog_food_3.png'
-import cat_snack_1 from './cat_snack_1.png'
-import cat_toy_1 from './cat_toy_1.png'
-import dog_toy_1 from './dog_toy_1.png'
 
 //@bm-b array of products
 const products = [
@@ -80,7 +76,7 @@ function Gallery() {
             <div className='overflow-hidden'>
               <Image width={500} height={500} 
                 className='object-cover object-bottom transition-all hover:scale-105 min-[340px]:object-center min-[340px]:pb-[30px]'
-                src={dog_food_3}
+                src='/images/dog_food_3.avif'
                 alt='Dog Food'
               />
             </div>
@@ -98,7 +94,7 @@ function Gallery() {
           <div className='overflow-hidden bg-white transition-all'>
             <Image width={500} height={500} 
               className='w-full overflow-hidden transition-all hover:scale-110'
-              src={cat_snack_1}
+              src='/images/cat_snack_1.avif'
               alt='Cat Snack'
             />
           </div>
@@ -117,7 +113,7 @@ function Gallery() {
           <div className='overflow-hidden bg-white transition-all'>
             <Image width={500} height={500} 
               className='w-full overflow-hidden transition-all hover:scale-110'
-              src={cat_toy_1}
+              src='/images/cat_toy_1.avif'
               alt='Cat Toy'
             />
           </div>
