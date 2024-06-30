@@ -256,7 +256,7 @@ function BigTestimonial() {
 
 function Testimonial() {
   return (
-    <section className='p-16'>
+    <section className='md:p-16'>
       <div className='container mx-auto'>
         <SmallTestimonial />
         <BigTestimonial />
