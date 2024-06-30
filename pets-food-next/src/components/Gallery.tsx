@@ -80,7 +80,7 @@ function Gallery() {
                 width={500}
                 height={500}
                 className='object-cover object-bottom transition-all hover:scale-105 min-[340px]:object-center min-[340px]:pb-[30px]'
-                src={'/images/dog_food_3.avif'}
+                src='/images/dog_food_3.avif'
                 alt='Dog Food'
               />
             </div>
@@ -100,7 +100,7 @@ function Gallery() {
               width={500}
               height={500}
               className='w-full overflow-hidden transition-all hover:scale-110'
-              src={'/images/cat_snack_1.avif'}
+              src='/images/cat_snack_1.avif'
               alt='Cat Snack'
             />
           </div>
@@ -121,7 +121,7 @@ function Gallery() {
               width={500}
               height={500}
               className='w-full overflow-hidden transition-all hover:scale-110'
-              src={'/images/cat_toy_1.avif'}
+              src='/images/cat_toy_1.avif'
               alt='Cat Toy'
             />
           </div>

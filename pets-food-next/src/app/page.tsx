@@ -1,10 +1,16 @@
 import { Hero } from '@/components/Hero';
 import { Gallery } from '@/components/Gallery';
+import { About } from '@/components/About';
+import { Testimonial } from '@/components/Testimonial';
+import { Footer } from '@/components/Footer';
 
 export default function Home(){
   return <main>
     <Hero />
     <Gallery />
+    <About />
+    <Testimonial />
+    <Footer />
     </main>
 }
 
