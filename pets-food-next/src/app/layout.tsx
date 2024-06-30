@@ -25,7 +25,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <body className={`${ubuntuMono.variable} ${bree.variable} ${lemon.variable}`}>        
+      {/* <body className={`${ubuntuMono.variable} ${bree.variable} ${lemon.variable}`}>  */}
+      <body className={`${ubuntuMono.variable}`}>        
         <Providers>
           <Navbar />
 
