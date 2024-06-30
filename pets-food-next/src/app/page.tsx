@@ -1,7 +1,11 @@
-import Image from 'next/image';
+import { Hero } from '@/components/Hero';
+import { Gallery } from '@/components/Gallery';
 
 export default function Home(){
-  return <>asdasdasd</>
+  return <main>
+    <Hero />
+    <Gallery />
+    </main>
 }
 
 // export default function Home() {

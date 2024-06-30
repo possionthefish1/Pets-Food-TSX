@@ -12,9 +12,12 @@ import {
 } from '@chakra-ui/react';
 // import { Link } from '@tanstack/react-router';
 import { useRef } from 'react';
-import { SignInModal } from './SignInModal';
+import { SignInModal } from '@/components/SignInModal';
 
 import Link from 'next/link';
+
+import { FaBars } from "react-icons/fa";
+
 
 function Logo() {
   return (
@@ -191,7 +194,7 @@ function DrawerExample() {
         {/* 
         @bm todo:  import font-awesome 
         */}
-        <i className='fa-sharp fa-solid fa-bars' />
+        <FaBars className='fa-sharp fa-solid fa-bars' />
       </Button>
       <Drawer
         size='full'

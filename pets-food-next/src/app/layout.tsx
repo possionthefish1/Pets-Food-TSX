@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Bree_Serif, Ubuntu_Mono, Lemon } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "./Navbar";
+import { Navbar } from "@/components/Navbar";
 
 // import { SignInModal } from '../SignInModal';
 import { Providers } from './providers'
@@ -25,14 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-  <script
-    // you might need to get a newer version
-    src="https://kit.fontawesome.com/fbadad80a0.js"
-    crossOrigin="anonymous"
-  ></script>
       <body className={`${ubuntuMono.variable} ${bree.variable} ${lemon.variable}`}>        
         <Providers>
           <Navbar />
+
           {children}
         </Providers>
       </body>
