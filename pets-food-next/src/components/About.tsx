@@ -1,12 +1,15 @@
 'use client';
 import Link from 'next/link';
+import { useState } from 'react';
 // import { useRouter } from 'next/router';
 // import { useEffect } from 'react';
 
-function SmallAbout() {
+type AboutProp = { isLove: boolean; onSwap: () => void };
+
+function SmallAbout({ isLove, onSwap }: AboutProp) {
   return (
     // 1000vw use 450px
-    <div className='mx-auto grid grid-cols-1 justify-center overflow-hidden md:hidden'>
+    <div className='mx-auto grid grid-cols-1 justify-center overflow-hidden py-8 md:hidden'>
       <div className='ml-2'>
         <h3 className='font-bold text-2xl uppercase underline decoration-2 decoration-pink-500 decoration-wavy'>
           about us
@@ -18,29 +21,31 @@ function SmallAbout() {
       </div>
       <div className='mx-auto h-[400px] overflow-hidden rounded-lg sm:h-[600px]'>
         <img
-          className='rounded-lg object-cover object-[0_-175px] transition-all hover:scale-[105%] sm:object-[0_-275px]'
+          className='mt-4 rounded-lg object-cover object-[0_-175px] transition-all hover:scale-[105%] sm:object-[0_-275px]'
           src='https://images.unsplash.com/photo-1561948955-570b270e7c36?q=80&w=2701&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
           alt='White fur cat doing funny face, its mouth open ajar and its yellow eyes with black iris inside open wide as if it has been caught by surprise.'
         />
       </div>
       <div className='ml-2 grid grid-cols-subgrid'>
         <p className='my-4'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Minus, possimus voluptates debitis eum doloribus totam ut
-          numquam vero repellendus ipsam!
+          We invite you to experience the difference that Thai
+          quality and care can make in your pet's life. Discover
+          delicious, nutritious food formulated with love and
+          respect for both your pet and the environment.{' '}
         </p>
         <Link
+          onClick={onSwap}
           href='/#about'
-          className='w-fit rounded-md bg-rose-400 px-10 py-4 text-center font-bold text-white text-xl uppercase transition-all duration-500 hover:border-rose-700 hover:bg-rose-700'
+          className='w-[312px] rounded-md bg-rose-400 px-4 py-4 text-center font-bold text-white text-xl uppercase transition-all duration-500 hover:border-rose-700 hover:bg-rose-700 md:px-10'
         >
-          Discover who we are
+          {isLove ? 'Discover who we are' : 'We are pet lovers'}
         </Link>
       </div>
     </div>
   );
 }
 
-function BigAbout() {
+function BigAbout({ isLove, onSwap }: AboutProp) {
   return (
     <div className='mx-auto hidden w-[75%] grid-cols-2 gap-24 md:grid md:gap-16 md:p-4 lg:h-[600px]'>
       <div className='overflow-hidden rounded-lg'>
@@ -61,15 +66,17 @@ function BigAbout() {
           <span className='text-red-700'>in thailand</span>
         </h2>
         <p className='my-8'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Minus, possimus voluptates debitis eum doloribus totam ut
-          numquam vero repellendus ipsam!
+          We invite you to experience the difference that Thai
+          quality and care can make in your pet's life. Discover
+          delicious, nutritious food formulated with love and
+          respect for both your pet and the environment.{' '}
         </p>
         <Link
+          onClick={onSwap}
           href='/#about'
-          className='w-fit text-nowrap rounded-md bg-rose-400 px-10 py-4 text-center font-bold text-white text-xl uppercase transition-all duration-500 hover:border-rose-700 hover:bg-rose-700'
+          className='w-[312px] text-nowrap rounded-md bg-rose-400 px-10 py-4 text-center font-bold text-white text-xl uppercase transition-all duration-500 hover:border-rose-700 hover:bg-rose-700'
         >
-          Discover who we are
+          {isLove ? 'Discover who we are' : 'We are pet lovers'}
         </Link>
         <div className='absolute inset-[0_0_auto_auto] inline-block w-fit rounded-full bg-gray-500 p-4 transition-all duration-[300ms] hover:scale-125'>
           <svg
@@ -88,6 +95,7 @@ function BigAbout() {
 }
 
 function About() {
+  const [isLove, setIsLove] = useState<boolean>(true);
   // const router = useRouter();
 
   // const handleScrollToProduct = () => {
@@ -102,14 +110,22 @@ function About() {
   //     handleScrollToProduct();
   //   }
   // }, [router.asPath, handleScrollToProduct]);
-
+  const handleSwap = () => {
+    setIsLove(!isLove);
+  };
   return (
     <section
-      className='container mx-auto my-8 max-w-[1280px] overflow-hidden rounded-none bg-slate-100 md:my-24'
+      className='container mx-auto my-8 max-w-[1280px] overflow-hidden rounded-lg bg-slate-100 md:my-24'
       id='about'
     >
-      <SmallAbout />
-      <BigAbout />
+      <SmallAbout
+        isLove={isLove}
+        onSwap={handleSwap}
+      />
+      <BigAbout
+        isLove={isLove}
+        onSwap={handleSwap}
+      />
     </section>
   );
 }

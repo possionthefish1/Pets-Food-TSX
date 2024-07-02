@@ -13,7 +13,8 @@ function SmallTestimonial() {
     <Grid
       templateRows='repeat(3, 0.5fr)'
       templateColumns='repeat(3, 1fr)'
-      gap={4}
+      rowGap={8}
+      columnGap={4}
       hideFrom='xl'
       alignItems='center'
     >
@@ -56,12 +57,10 @@ function SmallTestimonial() {
           </span>
         </Heading>
         <Text noOfLines={[2, 3, 4]}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Praesentium, nam. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Suscipit, ut. Lorem ipsum dolor sit
-          amet, consectetur adipisicing elit. Praesentium, nam.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Suscipit, ut.
+          As a pet parent to two very picky eaters, I was constantly
+          worried about finding food they'd actually enjoy. Luna's
+          coat has gotten so much shinier, and Milo finally has the
+          energy to keep up with his walks!
         </Text>
       </GridItem>
       <GridItem colSpan={1}>
@@ -93,12 +92,10 @@ function SmallTestimonial() {
           </span>
         </Heading>
         <Text noOfLines={[2, 3, 4]}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Praesentium, nam. Lorem ipsum dolor sit, amet consectetur
-          adipisicing elit. Aperiam, magnam. Lorem ipsum dolor sit
-          amet, consectetur adipisicing elit. Praesentium, nam.
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Aperiam, magnam.
+          Since using the Pet's Food app, mealtimes have become a
+          breeze! I can easily find high-quality food options based
+          on my pets' specific needs. It's a lifesaver. The app
+          delivers high-quality food straight to my door.
         </Text>
       </GridItem>
     </Grid>
@@ -125,8 +122,8 @@ function BigTestimonial() {
           words about <br /> our products
         </Heading>
         <Text mt='4'>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-          Maxime delectus ea repellendus.
+          Don't just take our words for it, see what our customer
+          said about our products.
         </Text>
       </GridItem>
       <GridItem
@@ -174,19 +171,18 @@ function BigTestimonial() {
           </span>
         </Heading>
         <Text mb='5'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Illum dicta minus dolorem esse, enim exercitationem
-          quisquam soluta rerum at?
+          Our pet food is made from the finest ingredients that are
+          sourced directly from our local farms and suppliers.
         </Text>
         <Text mb='5'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Consequatur laudantium blanditiis doloremque, est odio
-          earum magni dignissimos quasi voluptate.
+          We take great care to ensure that every ingredient has
+          been carefully selected and processed to provide our
+          customers with the highest quality.
         </Text>
         <Text mb='5'>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Iste nostrum itaque impedit laboriosam inventore! Deleniti
-          voluptatem ipsum delectus incidunt!
+          Our products have a positive impact on the health of our
+          pets by improving mood, shiner fur, and overall
+          well-being.
         </Text>
         <Text
           mt={6}
@@ -227,19 +223,15 @@ function BigTestimonial() {
           </span>
         </Heading>
         <Text mb='5'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Illum dicta minus dolorem esse, enim exercitationem
-          quisquam soluta rerum at?
+          Our pet food is incredibly affordable and of high quality.
         </Text>
         <Text mb='5'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Consequatur laudantium blanditiis doloremque, est odio
-          earum magni dignissimos quasi voluptate.
+          We have found that our pets love it so much we wanted to
+          share this with you!
         </Text>
         <Text mb='5'>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Iste nostrum itaque impedit laboriosam inventore! Deleniti
-          voluptatem ipsum delectus incidunt!
+          I recommend giving this product a try if you are looking
+          for the best value for your money.
         </Text>
         <Text
           mt={6}
@@ -256,7 +248,7 @@ function BigTestimonial() {
 
 function Testimonial() {
   return (
-    <section className='md:p-16'>
+    <section className='py-8 md:p-16'>
       <div className='container mx-auto'>
         <SmallTestimonial />
         <BigTestimonial />

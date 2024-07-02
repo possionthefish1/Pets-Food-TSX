@@ -1,9 +1,9 @@
 'use client';
 
+import type { AllowedCategories, ProductT } from '@/types/type';
 import React from 'react';
 import { Category } from './Category';
 import { ProductCard } from './ProductCard';
-import type { AllowedCategories, ProductT } from '@/types/type';
 
 const products: ProductT[] = [
   {
