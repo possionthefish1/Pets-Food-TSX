@@ -1,9 +1,9 @@
 'use client';
 
+import type { AllowedCategories, ProductT } from '@/types/type';
 import React from 'react';
 import { Category } from './Category';
 import { ProductCard } from './ProductCard';
-import type { AllowedCategories, ProductT } from '@/types/type';
 
 const products: ProductT[] = [
   {
@@ -81,8 +81,8 @@ const products: ProductT[] = [
 const ProductPage = () => {
   const [selectedCategory, setSelectedCategory] =
     React.useState(products);
-  /* @bm-g Derived State */
 
+  /* @bm-g Derived State */
   const handleSelectCategory = (type: AllowedCategories) => {
     if (type === 'all') {
       const nextSelected = [...products];
