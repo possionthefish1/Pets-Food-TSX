@@ -5,13 +5,15 @@ import { Testimonial } from '@/components/Testimonial';
 import { Footer } from '@/components/Footer';
 
 export default function Home(){
-  return <main>
+  return (
+    <main>
     <Hero />
     <Gallery />
     <About />
     <Testimonial />
     <Footer />
     </main>
+    )
 }
 
 // export default function Home() {
