@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
       <body className={`${ubuntuMono.variable} ${bree.variable} ${lemon.variable}`}> 
         <Providers>

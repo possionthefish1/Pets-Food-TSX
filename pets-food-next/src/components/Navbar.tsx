@@ -1,5 +1,6 @@
 'use client';
 
+import { SignInModal } from '@/components/SignInModal';
 import {
   Button,
   Drawer,
@@ -12,7 +13,6 @@ import {
 } from '@chakra-ui/react';
 // import { Link } from '@tanstack/react-router';
 import { useRef } from 'react';
-import { SignInModal } from '@/components/SignInModal';
 
 import Link from 'next/link';
 
@@ -134,7 +134,7 @@ function Navbar() {
 
   function MediumNav() {
     return (
-      <ul className='ml-auto hidden items-center justify-center gap-8 text-nowrap text-lg text-white md:flex md:gap-8 md:text-base min-[2560px]:ml-0 sm:hidden'>
+      <ul className='ml-auto hidden items-center justify-center gap-8 text-nowrap text-lg text-white sm:hidden md:flex md:gap-8 md:text-base min-[2560px]:ml-0'>
         <Destinations />
         <li>
           <button

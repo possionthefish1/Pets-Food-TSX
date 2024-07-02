@@ -1,4 +1,7 @@
-import Link from "next/link";
+'use client';
+import Link from 'next/link';
+// import { useRouter } from 'next/router';
+// import { useEffect } from 'react';
 
 function SmallAbout() {
   return (
@@ -39,10 +42,10 @@ function SmallAbout() {
 
 function BigAbout() {
   return (
-    <div className='mx-auto hidden w-[75%] grid-cols-2 gap-24 md:grid lg:h-[600px] md:gap-16 md:p-4'>
+    <div className='mx-auto hidden w-[75%] grid-cols-2 gap-24 md:grid md:gap-16 md:p-4 lg:h-[600px]'>
       <div className='overflow-hidden rounded-lg'>
         <img
-          className='w-[350px] overflow-hidden rounded-lg transition-all duration-300 ease-in-out md:w-full hover:scale-[115%] lg:hover:scale-[120%] lg:scale-[115%] lg:object-[0_-75px]'
+          className='w-[350px] overflow-hidden rounded-lg transition-all duration-300 ease-in-out hover:scale-[115%] md:w-full lg:scale-[115%] lg:object-[0_-75px] lg:hover:scale-[120%]'
           src='https://images.unsplash.com/photo-1561948955-570b270e7c36?q=80&w=2701&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
           alt='Cat Face'
         />
@@ -85,6 +88,21 @@ function BigAbout() {
 }
 
 function About() {
+  // const router = useRouter();
+
+  // const handleScrollToProduct = () => {
+  //   const element = document.getElementById('user1');
+  //   if (element) {
+  //     window.scroll({ top: element.offsetTop, behavior: 'smooth' });
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   if (router.asPath.includes('#user1')) {
+  //     handleScrollToProduct();
+  //   }
+  // }, [router.asPath, handleScrollToProduct]);
+
   return (
     <section
       className='container mx-auto my-8 max-w-[1280px] overflow-hidden rounded-none bg-slate-100 md:my-24'

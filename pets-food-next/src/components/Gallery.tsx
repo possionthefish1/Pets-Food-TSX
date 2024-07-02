@@ -39,7 +39,7 @@ function Intro() {
 
 function BigGallery() {
   return (
-    <div className='container mx-auto hidden grid-cols-2 grid-rows-2 gap-4 md:grid font-mono'>
+    <div className='container mx-auto hidden grid-cols-2 grid-rows-2 gap-4 font-mono md:grid'>
       {/* @bm-g todo: replace these with .map(*/}
       {products.map((product) => (
         <div
@@ -69,7 +69,7 @@ function Gallery() {
   return (
     <section
       id='gallery'
-      className='container mx-auto my-8 max-w-[900px] md:my-24 font-mono'
+      className='container mx-auto my-8 max-w-[900px] font-mono md:my-24'
     >
       <Intro />
       <div className='grid auto-rows-auto grid-cols-2 gap-4 md:hidden'>
