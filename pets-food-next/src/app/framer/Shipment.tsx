@@ -6,7 +6,7 @@ import { FaDog } from 'react-icons/fa6';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 // import VisuallyHidden from './VisuallyHidden';
 
-export const Shipment = ({ total = 10 }) => {
+export const Shipment = ({ total = 12 }) => {
   const [numOfProcessedWidgets, setNumOfProcessedWidgets] =
     useState(0);
 
@@ -28,13 +28,18 @@ export const Shipment = ({ total = 10 }) => {
 
   return (
     <section className='mt-[90px] flex h-dvh flex-col items-center justify-start bg-slate-900 p-4'>
+      <h2 className='text-white text-2xl font-bold'>
+        Processing your cart...
+      </h2>
       <div className='flex flex-col items-center gap-4'>
-        <div className='flex aspect-[12_/_9] w-dvw max-w-[192px] flex-wrap items-start justify-center gap-1 border-4 border-green-500 p-1'>
+        <div className='flex aspect-[12_/_9] w-dvw max-w-48 flex-wrap items-start justify-center gap-1 border-4 border-green-500 p-1'>
           {_.range(numOfUnprocessedWidgets).map((itemNum, i) => {
-            // const firstId = `${id}-${i}-${itemNum}`;
+            const topId = `${id}-${i + 1}`;
+            // Josh use same IDs in both places result in different animation (layoutId = `${id}-$itemNum}`)
             return (
               <motion.div
-                layoutId={`${i + 1}`}
+                // layoutId={`${i + 1}`}
+                layoutId={topId}
                 key={itemNum}
                 className='flex h-[32px] w-[32px] items-center justify-center rounded bg-indigo-400 font-semibold text-lg text-white'
               >
@@ -61,12 +66,14 @@ export const Shipment = ({ total = 10 }) => {
             {/* <VisuallyHidden>Revert widget</VisuallyHidden> */}
           </button>
         </div>
-        <div className='flex aspect-[12_/_9] w-dvw max-w-[192px] flex-wrap items-start justify-center gap-1 border-4 border-green-500 p-1'>
+        <div className='flex aspect-[12_/_9] w-dvw max-w-48 flex-wrap items-start justify-center gap-1 border-4 border-green-500 p-1'>
           {_.range(numOfProcessedWidgets).map((itemNum, i) => {
             // const secondId = `${id}-${i}-${itemNum}`;
+            const bottomId = `${id}-${total - i}`;
             return (
               <motion.div
-                layoutId={`${total - i}`}
+                // layoutId={`${total - i}`}
+                layoutId={bottomId}
                 key={itemNum}
                 className='flex h-[32px] w-[32px] items-center justify-center rounded bg-indigo-400 font-semibold text-lg text-white'
               >

@@ -62,7 +62,9 @@ function Footer() {
                 {list.contents.map((content) => (
                   // @bm-b links map
                   <li key={content.text}>
-                    <Link href={`${content.link}#${content.hash}`}>
+                    <Link
+                      href={`${content.link}${content.hash ? `#${content.hash}` : ''}`}
+                    >
                       {content.text}
                     </Link>
                   </li>
