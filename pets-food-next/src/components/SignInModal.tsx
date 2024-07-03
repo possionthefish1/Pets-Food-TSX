@@ -15,9 +15,15 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import { type SubmitHandler, useForm } from 'react-hook-form';
+import { FaArrowRight } from "react-icons/fa6";
+
+import { motion } from 'framer-motion'
+import { useState } from 'react';
 
 function SignInModal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const [page, setPage] = useState<"login" | "signup">("login") 
 
   type Inputs = {
     email: string;
@@ -65,7 +71,9 @@ function SignInModal() {
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Create your account</ModalHeader>
+          <ModalHeader>
+            {page === "login"?"Login to your account":"Create your account"}{' '}
+          </ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -104,19 +112,44 @@ function SignInModal() {
               </span>
               <Flex>
                 <Button
+                  as={motion.button}
                   type='submit'
                   colorScheme='blue'
+                  whileTap={{ scale: 0.9 }}
                   mt={4}
                   mr={3}
                 >
                   Submit
                 </Button>
                 <Button
+                  as={motion.button}
+                  whileTap={{ scale: 0.9 }}
                   mt={4}
                   onClick={onClose}
                 >
                   Cancel
                 </Button>
+                <Button
+              as={motion.button}
+              rightIcon={<FaArrowRight />}
+              colorScheme='pink'
+              color='rgb(244 63 94)'
+              variant='outline'
+              mt={4}
+              ml={'auto'}
+              whileHover={{ x: 5 }}
+              whileTap={{ x: 5, scale: 0.9 }}
+              onClick={() => {
+                if(page === "login"){
+                  setPage("signup")}
+                else{
+                  setPage("login")
+                }
+                }}
+              
+            >
+              {page === "login"?"Sign Up":"Login"}
+            </Button>
               </Flex>
             </form>
           </ModalBody>
@@ -126,4 +159,82 @@ function SignInModal() {
   );
 }
 
+function Form() {
+  return <form onSubmit={handleSubmit(onSubmit)}>
+  <FormControl>
+    <FormLabel>Email</FormLabel>
+    <Input
+      defaultValue=''
+      {...register('email', { required: true })}
+    />
+  </FormControl>
+
+  <span
+    style={
+      errors.email
+        ? { opacity: 1, color: 'rgb(244 63 94)' }
+        : { opacity: 0 }
+    }
+  >
+    Email field is required
+  </span>
+  <FormControl>
+    <FormLabel>Password</FormLabel>
+    <Input
+      defaultValue=''
+      {...register('password', { required: true })}
+    />
+  </FormControl>
+  <span
+    style={
+      errors.password
+        ? { opacity: 1, color: 'rgb(244 63 94)' }
+        : { opacity: 0 }
+    }
+  >
+    Password field is required
+  </span>
+  <Flex>
+    <Button
+      as={motion.button}
+      type='submit'
+      colorScheme='blue'
+      whileTap={{ scale: 0.9 }}
+      mt={4}
+      mr={3}
+    >
+      Submit
+    </Button>
+    <Button
+      as={motion.button}
+      whileTap={{ scale: 0.9 }}
+      mt={4}
+      onClick={onClose}
+    >
+      Cancel
+    </Button>
+    <Button
+  as={motion.button}
+  rightIcon={<FaArrowRight />}
+  colorScheme='pink'
+  color='rgb(244 63 94)'
+  variant='outline'
+  mt={4}
+  ml={'auto'}
+  whileHover={{ x: 5 }}
+  whileTap={{ x: 5, scale: 0.9 }}
+  onClick={() => {
+    if(page === "login"){
+      setPage("signup")}
+    else{
+      setPage("login")
+    }
+    }}
+  
+>
+  {page === "login"?"Sign Up":"Login"}
+</Button>
+  </Flex>
+</form>
+}
 export { SignInModal };
