@@ -12,6 +12,7 @@ const config: Config = {
   },
   theme: {
     /** @type {import('fluid-tailwind').FluidThemeConfig} */
+    // @ts-ignore
     fluid: ({ theme }) => ({
       defaultScreens: ['20rem', theme('screens.lg')],
     }),
