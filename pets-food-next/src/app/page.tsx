@@ -3,15 +3,21 @@ import { Gallery } from '@/components/Gallery';
 import { About } from '@/components/About';
 import { Testimonial } from '@/components/Testimonial';
 import { Footer } from '@/components/Footer';
+import { turso } from "@/app/lib/turso";
 
-export default function Home(){
+
+export default async function Home(){
+  const { rows } = await turso.execute("SELECT * FROM users")
   return (
     <main>
-    <Hero />
+      
+      <ul>      {rows.map((row) => (        <li key={row.id}>{row.id}</li>      ))}    </ul>
+
+    {/* <Hero />
     <Gallery />
     <About />
     <Testimonial />
-    <Footer />
+    <Footer /> */}
     </main>
     )
 }
