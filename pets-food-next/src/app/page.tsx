@@ -7,22 +7,22 @@ import { turso } from '@/app/lib/turso';
 // import { db } from "@/app/lib/turso";
 
 export default async function Home() {
-	const { rows } = await turso.execute('SELECT * FROM users');
+	// const { rows } = await turso.execute('SELECT * FROM users');
 	// const { rows } = await db
 
 	return (
 		<main>
-			<ul>
+			{/* <ul>
 				{rows.map((row) => (
 					<li key={row.id}>{row.id}</li>
 				))}
-			</ul>
+			</ul> */}
 
-			{/* <Hero />
-  <Gallery />
+		<Hero />
+    <Gallery />
     <About />
     <Testimonial />
-    <Footer /> */}
+    <Footer />
 		</main>
 	);
 }
