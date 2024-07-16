@@ -1,6 +1,7 @@
 /* import React from "react";
 import styles from "./Hero.module.css"; */
 
+import Image from 'next/image';
 // import { Link } from '@tanstack/react-router';
 import Link from 'next/link';
 
@@ -9,9 +10,13 @@ function Hero() {
     <section className='pt-6 md:pt-0'>
       <div className='2xl:-mt-60 min-[2560px]:-mt-48 relative mt-10 md:mt-12'>
         {/* img removed h-[50dvh] temp. */}
-        <img
+        <Image
           className='mx-auto w-full md:h-full'
           src='https://images.unsplash.com/photo-1597633611385-17238892d086?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+          width={739}
+          height={493}
+          // fill={true}
+          priority={true}
           alt='Dog'
         />
         <div className='-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 flex flex-col text-center text-slate-800'>

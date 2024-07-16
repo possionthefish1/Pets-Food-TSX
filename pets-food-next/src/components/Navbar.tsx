@@ -94,38 +94,40 @@ function Navbar() {
         }
       >
         <ul className='flex flex-col items-center justify-between gap-4 *:p-4'>
-          <button
-            type='button'
-            className='close-xmark absolute top-0 right-0'
-            ref={xMarkRef}
-            onClick={() => {
-              if (navRef.current && barRef.current) {
-                navRef.current.classList.toggle('opacity-0');
-                navRef.current.classList.toggle(
-                  '-translate-x-full',
-                );
-                navRef.current.classList.toggle('translate-x-0');
-                barRef.current.classList.remove('hidden');
-              }
-            }}
-          >
-            <svg
-              role='graphics-symbol'
-              aria-label='close-mobile-navigation'
-              xmlns='http://www.w3.org/2000/svg'
-              fill='none'
-              viewBox='0 0 24 24'
-              strokeWidth='1.5'
-              stroke='currentColor'
-              className='hover:-translate-y-1 size-8 transition hover:opacity-50'
+          <li>
+            <button
+              type='button'
+              className='close-xmark absolute top-0 right-0'
+              ref={xMarkRef}
+              onClick={() => {
+                if (navRef.current && barRef.current) {
+                  navRef.current.classList.toggle('opacity-0');
+                  navRef.current.classList.toggle(
+                    '-translate-x-full',
+                  );
+                  navRef.current.classList.toggle('translate-x-0');
+                  barRef.current.classList.remove('hidden');
+                }
+              }}
             >
-              <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                d='m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z'
-              />
-            </svg>
-          </button>
+              <svg
+                role='graphics-symbol'
+                aria-label='close-mobile-navigation'
+                xmlns='http://www.w3.org/2000/svg'
+                fill='none'
+                viewBox='0 0 24 24'
+                strokeWidth='1.5'
+                stroke='currentColor'
+                className='hover:-translate-y-1 size-8 transition hover:opacity-50'
+              >
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  d='m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z'
+                />
+              </svg>
+            </button>
+          </li>
           <Destinations />
         </ul>
       </nav>
@@ -165,7 +167,7 @@ function Navbar() {
 
   return (
     <header className='nav-wrapper fixed top-0 right-0 left-0 z-10 bg-rose-400'>
-      {/* <!-- 2xl should become 1 row and span all --> */}
+      {/* @bm-b nav <!-- 2xl should become 1 row and span all --> */}
       <nav className='container relative z-10 mx-auto grid min-w-[300px] grid-cols-2 items-center px-8 py-4 md:grid-cols-[0.5fr_1fr] md:justify-between md:gap-4 md:px-4 min-[2560px]:grid-cols-2 min-[2560px]:justify-items-center min-[2560px]:px-96'>
         <Logo />
         <DrawerExample />
